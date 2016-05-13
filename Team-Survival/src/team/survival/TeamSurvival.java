@@ -37,7 +37,7 @@ public class TeamSurvival {
         Resource resourceOne = new Resource();
     
         resourceOne.setResourceType("Food");
-        resourceOne.setDescription("String");
+        resourceOne.setDescription("Mostly carbohydates");
     
         String resourceInfo = resourceOne.toString();
         System.out.println(resourceInfo);
