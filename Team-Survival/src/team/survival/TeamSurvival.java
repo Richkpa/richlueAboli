@@ -5,6 +5,7 @@
  */
 package team.survival;
 
+import byui.cit260.TeamSurvival.model.Game;
 import byui.cit260.TeamSurvival.model.Player;
 import byui.cit260.TeamSurvival.model.Resource;
 
@@ -33,7 +34,7 @@ public class TeamSurvival {
         String playerTwoInfo = playerTwo.toString();
         System.out.println(playerTwoInfo);
         
-        // Resource Class
+        // Resource Class-------------------------------------------------------
         Resource resourceOne = new Resource();
     
         resourceOne.setResourceType("Food");
@@ -41,6 +42,14 @@ public class TeamSurvival {
     
         String resourceInfo = resourceOne.toString();
         System.out.println(resourceInfo);
+        
+        //Game class creation---------------------------------------------------
+        Game gameOne = new Game();
+        
+        gameOne.setNoOfMoves(75);
+        
+        String gameInfo = gameOne.toString();
+        System.out.println(gameInfo);
         
     }
   
