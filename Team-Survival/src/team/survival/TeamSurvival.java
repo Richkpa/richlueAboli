@@ -7,6 +7,7 @@ package team.survival;
 
 import byui.cit260.TeamSurvival.model.Player;
 import byui.cit260.TeamSurvival.model.Resource;
+import byui.cit260.TeamSurvival.model.Scene;
 
 /**
  *
@@ -42,6 +43,16 @@ public class TeamSurvival {
         String resourceInfo = resourceOne.toString();
         System.out.println(resourceInfo);
         
+        //scene class
+        
+        Scene sceneOne = new Scene();
+        
+        sceneOne.setType("Basement");
+        sceneOne.setDescription("This is where every player begins. The basement is in the bottom of the ship");
+ 
+        String sceneInfo = sceneOne.toString();
+        System.out.println(sceneInfo);
+
     }
   
 }
