@@ -5,9 +5,12 @@
  */
 package team.survival;
 
+import byui.cit260.TeamSurvival.model.Game;
+import byui.cit260.TeamSurvival.model.Map;
 import byui.cit260.TeamSurvival.model.Player;
 import byui.cit260.TeamSurvival.model.Resource;
 import byui.cit260.TeamSurvival.model.Scene;
+import byui.cit260.TeamSurvival.model.Ship;
 
 /**
  *
@@ -34,7 +37,7 @@ public class TeamSurvival {
         String playerTwoInfo = playerTwo.toString();
         System.out.println(playerTwoInfo);
         
-        // Resource Class
+        // Resource Class------------------------------------------------------
         Resource resourceOne = new Resource();
     
         resourceOne.setResourceType("Food");
@@ -42,7 +45,7 @@ public class TeamSurvival {
     
         String resourceInfo = resourceOne.toString();
         System.out.println(resourceInfo);
-        
+      
         //scene class
         
         Scene sceneOne = new Scene();
@@ -53,6 +56,44 @@ public class TeamSurvival {
         String sceneInfo = sceneOne.toString();
         System.out.println(sceneInfo);
 
+        //Game class creation---------------------------------------------------
+        Game gameOne = new Game();
+        
+        gameOne.setNoOfMoves(75);
+        
+        String gameInfo = gameOne.toString();
+        System.out.println(gameInfo);
+        
+        //Map class creation----------------------------------------------------
+        Map mapOne = new Map();
+        
+        mapOne.setRowCount(150);
+        mapOne.setColumnCount(75);
+        
+        String mapInfo = mapOne.toString();
+        System.out.println(mapInfo);
+        
+        //Ship class creation---------------------------------------------------
+        Ship shipOne = new Ship();
+        
+        shipOne.setDescription("B-52 JET");
+        shipOne.setWidth(750);
+        shipOne.setLength(100);
+        shipOne.setHeight(25);
+        
+        String shipInfo = shipOne.toString();
+        System.out.println(shipInfo);
+        
+        //Character class creation----------------------------------------------
+       // Character characterOne = new Character();
+        
+       // characterOne.setName("Plawuo");
+       // characterOne.setDescription("Fear is for Others");
+       // characterOne.setCoordinates(5);
+        
+        //String characterInfo = characterOne.toString();
+        //System.out.println(characterInfo);
+    
     }
   
 }
