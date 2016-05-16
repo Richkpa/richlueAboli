@@ -55,7 +55,7 @@ public class TeamSurvival {
  
         String sceneInfo = sceneOne.toString();
         System.out.println(sceneInfo);
-
+        
         //Game class creation---------------------------------------------------
         Game gameOne = new Game();
         
