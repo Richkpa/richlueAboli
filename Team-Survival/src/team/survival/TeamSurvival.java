@@ -10,6 +10,13 @@ import byui.cit260.TeamSurvival.model.Map;
 import byui.cit260.TeamSurvival.model.Player;
 import byui.cit260.TeamSurvival.model.Resource;
 import byui.cit260.TeamSurvival.model.Ship;
+import byui.cit260.TeamSurvival.model.Scene;
+import byui.cit260.TeamSurvival.model.Location;
+import byui.cit260.TeamSurvival.model.Obstacle;
+import byui.cit260.TeamSurvival.model.Item;
+
+
+
 
 /**
  *
@@ -44,6 +51,8 @@ public class TeamSurvival {
     
         String resourceInfo = resourceOne.toString();
         System.out.println(resourceInfo);
+      
+ 
         
         //Game class creation---------------------------------------------------
         Game gameOne = new Game();
@@ -82,6 +91,51 @@ public class TeamSurvival {
         
        // String characterInfo = characterOne.toString();
         //System.out.println(characterInfo);
+        
+        //scene class 
+        
+        Scene sceneOne = new Scene();
+         
+        sceneOne.setType("Basement");
+        sceneOne.setDescription("This is where every player begins. The basement is in the bottom of the ship");
+  
+        String sceneInfo = sceneOne.toString();
+        System.out.println(sceneInfo);
+        
+        //Location class
+        
+        Location locationOne = new Location();
+    
+        locationOne.setRow(2);
+        locationOne.setColumn(3);
+        locationOne.setLocationsVisited(3);
+        locationOne.setLocationsRemaining(3);
+
+
+        String locationInfo = locationOne.toString();
+        System.out.println(locationInfo);
+        
+        // Obstacle class
+        
+        Obstacle obstacleOne = new Obstacle();
+        
+        obstacleOne.setDescription("Player must provide the area of a circle and the circumference. The sum of which would be the code to a lock");
+        obstacleOne.setAnswer(222);
+        
+        String obstacleInfo = obstacleOne.toString();
+        System.out.println(obstacleInfo);
+        
+        //item class
+        
+        Item itemOne = new Item();
+        
+        itemOne.setItemType("blanket");
+        itemOne.setAvailableQuantity(3.21);
+        itemOne.setRequiredAmount(5.00);
+
+        String itemInfo = itemOne.toString();
+        System.out.println(itemInfo);
+        
     
     }
     
