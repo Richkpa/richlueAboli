@@ -74,15 +74,15 @@ public class TeamSurvival {
         System.out.println(shipInfo);
         
         //Character class creation----------------------------------------------
-       // Character characterOne = new Character();
+        //Character characterOne = Character();
         
        // characterOne.setName("Plawuo");
        // characterOne.setDescription("Fear is for Others");
-       // characterOne.setCoordinates(5);
+      //  characterOne.setCoordinates(5);
         
-        //String characterInfo = characterOne.toString();
+       // String characterInfo = characterOne.toString();
         //System.out.println(characterInfo);
     
     }
-  
+    
 }
