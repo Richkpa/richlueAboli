@@ -19,6 +19,23 @@ public class LocationControl {
         }
         double area = Math.pow(radius, 2) * Math.PI;
         return area; 
+        
 }
-
+    public double getFinalResult (double area, double number){
+        
+            
+        if (number < 90 || number > 360 || area < 1){
+        return -1;
+        }
+        
+       
+        
+        return area + number;
+       // else
+        
+   
     }
+
+
+        
+}
