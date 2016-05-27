@@ -192,8 +192,8 @@ public class LocationControlTest {
         expResult = -1;
         result = instance.calcDistance(x1, y1, x2, y2);
         assertEquals(expResult, result, 0.01);
-//        
-//        
+
+        
         //test case 5 for boundaries on x axis
         System.out.println("Test case 5");
 
@@ -204,8 +204,8 @@ public class LocationControlTest {
         expResult = 99.32271;
         result = instance.calcDistance(x1, y1, x2, y2);
         assertEquals(expResult, result, 0.01);
-//        
-//        
+
+        
         //test case 6 for boundaries on y axis
         System.out.println("Test case 6");
 
