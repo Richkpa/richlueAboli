@@ -138,5 +138,109 @@ public class LocationControlTest {
         
         
     }
+
+    /**
+     * Test of calcDistance method, of class LocationControl.
+     */
+    @Test
+    public void testCalcDistance() {
+        System.out.println("calcDistance");
+        
+        //test case 1
+        System.out.println("Test case 1");
+
+        double x1 = 2.0;
+        double y1 = 6.0;
+        double x2 = 12.0;
+        double y2 = 4.0;
+        LocationControl instance = new LocationControl();
+        double expResult = 10.19804;
+        double result = instance.calcDistance(x1, y1, x2, y2);
+        assertEquals(expResult, result, 0.01);
+        
+        //test case 2
+        System.out.println("Test case 2");
+
+        x1 = -1;
+        y1 = 4;
+        x2 = 12.0;
+        y2 = 4.0;
+        expResult = -1;
+        result = instance.calcDistance(x1, y1, x2, y2);
+        assertEquals(expResult, result, 0.01);
+        
+        //test case 3
+        System.out.println("Test case 3");
+
+        x1 = 2;
+        y1 = 6;
+        x2 = -1;
+        y2 = -4;
+        expResult = -1;
+        result = instance.calcDistance(x1, y1, x2, y2);
+        assertEquals(expResult, result, 0.01);
+        
+        
+        
+        //test case 4 for exceeded bondaries on x and y
+        System.out.println("Test case 4");
+
+        x1 = 101;
+        y1 = 4;
+        x2 = 4;
+        y2 = 31;
+        expResult = -1;
+        result = instance.calcDistance(x1, y1, x2, y2);
+        assertEquals(expResult, result, 0.01);
+//        
+//        
+        //test case 5 for boundaries on x axis
+        System.out.println("Test case 5");
+
+        x1 = 1;
+        y1 = 12;
+        x2 = 100;
+        y2 = 4;
+        expResult = 99.32271;
+        result = instance.calcDistance(x1, y1, x2, y2);
+        assertEquals(expResult, result, 0.01);
+//        
+//        
+        //test case 6 for boundaries on y axis
+        System.out.println("Test case 6");
+
+        x1 = 2;
+        y1 = 1;
+        x2 = 6;
+        y2 = 30;
+        expResult = 29.27456;
+        result = instance.calcDistance(x1, y1, x2, y2);
+        assertEquals(expResult, result, 0.01);
+//        
+//        
+        //test case 7 for upper boundaries x and y
+        System.out.println("Test case 7");
+
+        x1 = 100;
+        y1 = 1;
+        x2 = 1;
+        y2 = 30;
+        expResult = 103.16007;
+        result = instance.calcDistance(x1, y1, x2, y2);
+        assertEquals(expResult, result, 0.01);
+//        
+//        
+        //test case 8 for boundaries on x and y
+        System.out.println("Test case 8");
+
+        x1 = 1;
+        y1 = 30;
+        x2 = 100;
+        y2 = 1;
+        expResult = 103.16007;
+        result = instance.calcDistance(x1, y1, x2, y2);
+        assertEquals(expResult, result, 0.01);
+        
+    }
     
 }
