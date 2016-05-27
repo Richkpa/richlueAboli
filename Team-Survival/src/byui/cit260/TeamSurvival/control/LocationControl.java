@@ -28,12 +28,8 @@ public class LocationControl {
         return -1;
         }
         
-       
-        
-        return area + number;
+       return area + number;
        // else
-        
-   
     }
 
 
