@@ -101,6 +101,67 @@ public class LocationControlTest {
     }
 
     /**
+
+     * Test of convertLbsToGram method, of class LocationControl.
+     */
+    @Test
+    public void testConvertLbsToGram() {
+        System.out.println("convertLbsToGram");
+    
+        //Test Case #1 - Calculate the the valid amount to grams
+    
+        System.out.println("Test Case #1");
+    
+        double pounds = 55.0;
+        LocationControl instance = new LocationControl();
+        double expResult = 25000.0;
+        double result = instance.convertLbsToGram(pounds);
+        assertEquals(expResult, result, 0.01);
+        
+        //Test Case #2 - check if the pounds is less than 45
+    
+        System.out.println("Test Case #2");
+    
+         pounds = 44.0;
+        
+         expResult = -1.0;
+         result = instance.convertLbsToGram(pounds);
+         assertEquals(expResult, result, 0.01);
+         
+         //Test Case #3 - check if pounds is grater than 125
+    
+        System.out.println("Test Case #3");
+    
+         pounds = 126.0;
+        
+         expResult = -1.0;
+         result = instance.convertLbsToGram(pounds);
+         assertEquals(expResult, result, 0.01);
+         
+       
+          //Test Case #4 - check for the lower boundaries of pounds
+    
+        System.out.println("Test Case #4");
+    
+         pounds = 46.0;
+        
+         expResult = 20909.09;
+         result = instance.convertLbsToGram(pounds);
+         assertEquals(expResult, result, 0.01);
+         
+         //Test Case #5 - check for the upper boundaries of pounds
+    
+        System.out.println("Test Case #5");
+    
+         pounds = 60.0;
+        
+         expResult = 27272.72;
+         result = instance.convertLbsToGram(pounds);
+         assertEquals(expResult, result, 0.01);
+    }
+    
+    
+/**
      * Test of getFinalResult method, of class LocationControl.
      */
     @Test
@@ -242,5 +303,6 @@ public class LocationControlTest {
         assertEquals(expResult, result, 0.01);
         
     }
+
     
 }

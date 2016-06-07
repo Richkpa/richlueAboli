@@ -66,6 +66,26 @@ public class LocationControl {
     
 
 
+    ////Convert Pounds to Grams Calculation
+    public double convertLbsToGram (double pounds){
+    
+    if (pounds < 46 || pounds > 125) {
+    return -1;   
+    
+    }
+    
+ 
+    double grams =  (pounds * (1  / 2.2 )) * (1000  / 1 );
+    
+     return grams;
+    
+    }
+    
+
+}
+
+
 
         
-}
+
+
