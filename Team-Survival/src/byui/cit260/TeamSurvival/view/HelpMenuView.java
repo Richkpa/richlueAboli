@@ -83,7 +83,7 @@ Scanner keyboard = new Scanner(System.in); //get infile from the keyboard
                                System.out.println("\nInvalid selection. Try again");
                        }
 
-                        return true;   
+                        return false;   
     }
     
     
@@ -106,9 +106,8 @@ Scanner keyboard = new Scanner(System.in); //get infile from the keyboard
 
 
 
-    void displayMenu() {
-                                       System.out.println("\n" + this.menu);
+    
 
-        }
+        
     }
 

@@ -36,7 +36,7 @@ public void displayMainMenuView(){
     do{
         String menuOption = this.getmenuOption();
         if (menuOption.toUpperCase().equals("Q"))//user want to quit
-            return ;
+            return;
         
         //do the requested action and display the next view
         done = this.doAction(menuOption);
@@ -86,7 +86,7 @@ public void displayMainMenuView(){
                                System.out.println("\nInvalid selection. Try again");
                        }
 
-                        return true;   
+                        return false;   
     }
 
     private void startNewGame() {
@@ -103,7 +103,7 @@ public void displayMainMenuView(){
 
     private void displayHelpMenu() {
         HelpMenuView helpMenu = new HelpMenuView();
-        helpMenu.displayMenu();
+        helpMenu.displayHelpMenuView();
         
         
     }
