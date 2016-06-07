@@ -103,4 +103,12 @@ Scanner keyboard = new Scanner(System.in); //get infile from the keyboard
     private void descriptionOfLocation() {
                                System.out.println("\n***desriptionOfLocation stub function called");
     }
+
+
+
+    void displayMenu() {
+                                       System.out.println("\n" + this.menu);
+
+        }
     }
+
