@@ -20,6 +20,9 @@ public class GameControl {
             return null;
         }
         
+        
+        
+        
         Player player = new Player();
         player.setName(name);
         
@@ -27,4 +30,13 @@ public class GameControl {
          return player;
     }
     
+        public static Player createPlayer(Player player){
+            System.out.println("\ncreatenewGame function called");
+            return player;
+        }
+
+    public static void createNewGame(Player player) {
+            System.out.println("\ncreatenewGame function called");
+    }
+        
 }

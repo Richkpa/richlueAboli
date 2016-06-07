@@ -13,25 +13,24 @@ import team.survival.TeamSurvival;
  *
  * @author Aboli
  */
-public class MainMenuView {
-    
-    private String menu;
+public class HelpMenuView{ 
+        
+         private String menu;
    
     
-    public MainMenuView(){
+    public HelpMenuView(){
         this.menu = 
                 "\n**********************************"
-               +"\n |  Main Menu                      "
+               +"\n |  Help Menu                      "
                +"\n **********************************"
-               +"\n N - Start New Game                "    
-               +"\n G - Get and start saved game      " 
-               +"\n H - Get help on how to play       " 
-               +"\n S - Save game                     " 
+               +"\n P - Purpose of the Game           "    
+               +"\n H - How to move                   " 
+               +"\n D - Description of locations      " 
                +"\n Q - Quit                          " 
                +"\n***********************************";
     }
-        
-public void displayMainMenuView(){
+    
+    public void displayHelpMenuView(){
     boolean done = false; //set flag to not done
     do{
         String menuOption = this.getmenuOption();
@@ -46,8 +45,7 @@ public void displayMainMenuView(){
 }
 
     private String getmenuOption() {
-        
-        Scanner keyboard = new Scanner(System.in); //get infile from the keyboard
+Scanner keyboard = new Scanner(System.in); //get infile from the keyboard
         String value = ""; //value to be returned is a string
         boolean valid = false; // initialize the valuve of the vaariable to not valid
         
@@ -66,21 +64,20 @@ public void displayMainMenuView(){
                 break;
         }
                 return value;
-    }
+    }  
+
+
     private boolean doAction(String choice) {
-                       choice = choice.toUpperCase();// convert choice to upper case
+        choice = choice.toUpperCase();// convert choice to upper case
                        switch(choice){
-                           case "N":
-                               this.startNewGame();
-                               break;
-                           case "G":
-                               this.startExistingGame();
+                           case "P":
+                               this.purposeOfGame();
                                break;
                            case "H":
-                               this.displayHelpMenu();
+                               this.howToMove();
                                break;
-                           case "S":
-                               this.saveGame();
+                           case "D":
+                               this.descriptionOfLocation();
                                break;
                            default:
                                System.out.println("\nInvalid selection. Try again");
@@ -88,26 +85,22 @@ public void displayMainMenuView(){
 
                         return true;   
     }
+    
+    
+    //create the help menu onject
+                        
 
-    private void startNewGame() {
-        //create a new game
-        GameControl.createNewGame(TeamSurvival.getPlayer());
-        //display the game menu
-        GameMenuView gameMenu = new GameMenuView();
-        gameMenu.displayMenu();
+//   
+
+    private void purposeOfGame() {
+                               System.out.println("\n***puroseOfGame stub function called");
     }
 
-    private void startExistingGame() {
-                               System.out.println("\n***startExistingGame function called");
+    private void howToMove() {
+                               System.out.println("\n***howToMove stub function called");
     }
 
-    private void displayHelpMenu() {
-                               System.out.println("\n***displayHelpMenu function called");
-    }
-
-    private void saveGame() {
-                               System.out.println("\n***saveGame function called");
+    private void descriptionOfLocation() {
+                               System.out.println("\n***desriptionOfLocation stub function called");
     }
     }
-
-

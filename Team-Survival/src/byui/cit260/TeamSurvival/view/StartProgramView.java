@@ -111,8 +111,7 @@ public class StartProgramView {
                +"\n**********************************"
         );
                         //create the main menu onject
-                        MainMenuView 
-        mainMenuView = new MainMenuView();
+                MainMenuView mainMenuView = new MainMenuView();
                         
                         //display main menu view        
                         mainMenuView.displayMainMenuView();
