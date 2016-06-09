@@ -20,7 +20,7 @@ public class HelpMenuView{
     
     public HelpMenuView(){
         this.menu = 
-                "\n**********************************"
+                "\n***********************************"
                +"\n |  Help Menu                      "
                +"\n **********************************"
                +"\n P - Purpose of the Game           "    
@@ -68,17 +68,17 @@ Scanner keyboard = new Scanner(System.in); //get infile from the keyboard
 
 
     private boolean doAction(String choice) {
-        choice = choice.toUpperCase();// convert choice to upper case
-                       switch(choice){
-                           case "P":
-                               this.purposeOfGame();
-                               break;
-                           case "H":
-                               this.howToMove();
-                               break;
-                           case "D":
-                               this.descriptionOfLocation();
-                               break;
+       choice = choice.toUpperCase();// convert choice to upper case
+       switch(choice){
+           case "P":
+                this.purposeOfGame();
+                break;
+           case "H":
+                this.howToMove();
+                break;
+           case "D":
+                 this.descriptionOfLocation();
+                break;
                            default:
                                System.out.println("\nInvalid selection. Try again");
                        }
