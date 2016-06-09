@@ -67,23 +67,35 @@ public class LocationControl {
 
 
     ////Convert Pounds to Grams Calculation
-    public double convertLbsToGram (double pounds){
+    public static double convertLbsToGram (double pounds){
     
     if (pounds < 46 || pounds > 125) {
     return -1;   
     
     }
     
- 
+ //formula for converting from pounds to grams
     double grams =  (pounds * (1  / 2.2 )) * (1000  / 1 );
     
      return grams;
     
     }
-    
-
+    public static boolean checkValidedPounds (double convertPounds, double answer){
+        //convert poubds into grams
+       double grams = (int) LocationControl.convertLbsToGram(answer);
+        //check to see if the number of grams equal the answer than 
+        //this is called to the ConvertToPoundsView
+             if (convertPounds == answer)
+            //return true
+                   return true;  
+        //else 
+              else
+                   return false;
+            //return flase
+        
 }
-
+    
+}
 
 
         
