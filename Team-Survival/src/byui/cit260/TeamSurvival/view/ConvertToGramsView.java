@@ -33,6 +33,7 @@ public class ConvertToGramsView {
                 done = this.doAction(number);
             }
             while (!done);
+           
     }
      
       private String getNumber() {
@@ -53,7 +54,7 @@ public class ConvertToGramsView {
                 continue;
 
                 }
-                break;
+             break;
     }
         return value;
     }
