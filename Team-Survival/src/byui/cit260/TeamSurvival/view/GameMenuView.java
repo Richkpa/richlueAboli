@@ -5,6 +5,8 @@
  */
 package byui.cit260.TeamSurvival.view;
 
+import java.util.Scanner;
+
 /**
  *
  * @author Aboli
@@ -16,21 +18,106 @@ public class GameMenuView {
     
     public GameMenuView(){
         this.menu = 
-                "\n**********************************"
+                "\n***********************************"
                +"\n |  Main Menu                      "
                +"\n **********************************"
                +"\n V - View Map                      "    
-               +"\n Y - View locations already visited" 
-               +"\n N - View Locations not yet visited" 
                +"\n R - View remaining number of moves" 
+               +"\n L - View for resources in a place." 
                +"\n S - Save game                     " 
                +"\n H - Help menu                     " 
                +"\n Q - Quit                          " 
                +"\n***********************************";
     }
-    void displayMenu(){
-            System.out.println("\n displayMenu stub function called");
-           
+    
+    public void displayGameMenuView(){
+    boolean done = false; //set flag to not done
+    do{
+        String menuOption = this.getmenuOption();
+        if (menuOption.toUpperCase().equals("Q"))//user want to quit
+            return;
+        
+        //do the requested action and display the next view
+        done = this.doAction(menuOption);
+    }while(!done);
+
     
 }
+//    void displayMenu(){
+//            System.out.println("\n displayMenu stub function called");
+//           
+//    
+//}
+
+    private String getmenuOption() {
+        Scanner keyboard = new Scanner(System.in); //get infile from the keyboard
+        String value = ""; //value to be returned is a string
+        boolean valid = false; // initialize the valuve of the vaariable to not valid
+        
+        while (!valid){
+        
+                System.out.println("\n" + this.menu);
+                
+                value = keyboard.nextLine(); //get nextline typed on keyboard
+                value = value.trim(); //Trim off the leading and trailing blanks
+                
+                if (value.length() < 1){
+                System.out.println("\nInvalid value: value cannot be blank");
+                continue;
+
+                } 
+                break;
+        }
+                return value;
+    }
+
+    private boolean doAction(String choice) {
+        choice = choice.toUpperCase();// convert choice to upper case
+                       switch(choice){
+                           case "V":
+                               this.viewMap();
+                               break;
+                           case "R":
+                               this.movesRemaining();
+                               break;
+                           case "L":
+                               this.resourceList();
+                               break;
+                           case "S":
+                               this.movesRemaining();
+                               break;
+                           case "H":
+                               this.movesRemaining();
+                               break;
+                           case "Q":
+                               this.movesRemaining();
+                               break;
+                               
+                           default:
+                               System.out.println("\nInvalid selection. Try again");
+                       }
+
+                        return false;   
+    }
+
+//    void displayMenu() {
+//        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+//    }
+
+    private void viewMap() {
+                System.out.println("\nviewMap() stub function called here");
+    }
+
+    private void movesRemaining() {
+                System.out.println("\nremainingMoves() stub function called here");
+    }
+
+    private void resourceList() {
+                System.out.println("\nresultList() stub function called here");
+    }
+
+    void displayMenu() {
+        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+    }
+    
 }
