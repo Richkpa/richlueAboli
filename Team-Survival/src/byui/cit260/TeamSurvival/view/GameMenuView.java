@@ -19,7 +19,7 @@ public class GameMenuView {
     public GameMenuView(){
         this.menu = 
                 "\n***********************************"
-               +"\n |  Main Menu                      "
+               +"\n |  Game Menu                      "
                +"\n **********************************"
                +"\n V - View Map                      "    
                +"\n R - View remaining number of moves" 
@@ -82,17 +82,7 @@ public class GameMenuView {
                                break;
                            case "L":
                                this.resourceList();
-                               break;
-                           case "S":
-                               this.movesRemaining();
-                               break;
-                           case "H":
-                               this.movesRemaining();
-                               break;
-                           case "Q":
-                               this.movesRemaining();
-                               break;
-                               
+                               break;                               
                            default:
                                System.out.println("\nInvalid selection. Try again");
                        }
@@ -114,10 +104,6 @@ public class GameMenuView {
 
     private void resourceList() {
                 System.out.println("\nresultList() stub function called here");
-    }
-
-    void displayMenu() {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
     }
     
 }
