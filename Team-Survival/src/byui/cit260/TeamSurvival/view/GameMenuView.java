@@ -103,7 +103,8 @@ public class GameMenuView {
     }
 
     private void resourceList() {
-                System.out.println("\nresultList() stub function called here");
+                ResourceListView resourceList = new ResourceListView();
+                resourceList.ResourceListView();
     }
     
 }
