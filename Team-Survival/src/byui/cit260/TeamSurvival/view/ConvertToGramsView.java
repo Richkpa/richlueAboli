@@ -25,12 +25,12 @@ public class ConvertToGramsView {
             boolean done  = false; //set flag to not done
             do{
                 //prompt for and get the amount needed 
-                String Number = this.getNumber();
-                if (Number.toUpperCase().equals("Q"))
+                String number = this.getNumber();
+                if (number.toUpperCase().equals("Q"))
                     return;
                 
                 //do the requested action and display the next view.
-                done = this.doAction(Number);
+                done = this.doAction(number);
             }
             while (!done);
     }
@@ -59,11 +59,12 @@ public class ConvertToGramsView {
     }
 
 //call the checkvalidedPounds class form the location control
-    private boolean doAction(String Number) {
+    
+    private boolean doAction(String number) {
+        double answer = Double.parseDouble(number);
         // I want to pass the value "Number" enter from the user
         double ConvertPounds = 89.06;
         //this will be the answer geerated form the computer
-        double answer = 2234.234;
         // this Is What I Want TO Convert To Pounds - this Is The Answer From The Computer
     boolean isValided = LocationControl.checkValidedPounds(ConvertPounds, answer);
         return isValided;
