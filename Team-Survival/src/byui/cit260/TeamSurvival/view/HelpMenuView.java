@@ -93,15 +93,20 @@ Scanner keyboard = new Scanner(System.in); //get infile from the keyboard
 //   
 
     private void purposeOfGame() {
-                               System.out.println("\n***puroseOfGame stub function called");
+                               System.out.println("\n In this game the player wil have to try to make his way back"
+                                                   +"\nto the basement of the ship where they satrted after having passed"
+                                                   +"\nall the obstacles");
     }
 
     private void howToMove() {
-                               System.out.println("\n***howToMove stub function called");
+                               System.out.println("\n Players direction will be determined by how many rows"
+                               +"\nand columns they intend to move.The player will input with up, down, left, or"
+                                       + "\n right and the number of spaces they intend to move");
     }
 
     private void descriptionOfLocation() {
-                               System.out.println("\n***desriptionOfLocation stub function called");
+                               System.out.println("Depending on the laocation the player enters,"
+                                       + "\n a brief description will be provided.");
     }
 
 
