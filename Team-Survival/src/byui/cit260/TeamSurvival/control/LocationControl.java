@@ -67,20 +67,21 @@ public class LocationControl {
 
 
     ////Convert Pounds to Grams Calculation
-    public static double convertLbsToGram (double pounds){
+    public static double convertLbsToGram (double pounds){  //Birth
     
-    if (pounds < 46 || pounds > 125) {
-    return -1;   
+    if (pounds < 46 || pounds > 125) { //Birth 
+    return -1;   //Death
     
     }
     
  //formula for converting from pounds to grams
-    double grams =  (pounds * (1  / 2.2 )) * (1000  / 1 );
+    double grams =  (pounds * (1  / 2.2 )) * (1000  / 1 ); //Birth
     
-     return grams;
+     return grams; //death
     
-    }
-    public static boolean checkValidedPounds (double convertPounds, double answer){
+    } //death
+    
+    public static boolean checkValidedPounds (double convertPounds, double answer){ //Birth 
         //convert poubds into grams
        double grams = (int) LocationControl.convertLbsToGram(answer);
         //check to see if the number of grams equal the answer than 
@@ -93,7 +94,7 @@ public class LocationControl {
                    return false;
             //return flase
         
-}
+} //Death
     
 }
 
