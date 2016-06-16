@@ -83,10 +83,10 @@ public class LocationControl {
     
     public static boolean checkValidedPounds (double convertPounds, double answer){ //Birth 
         //convert poubds into grams
-       double grams = (int) LocationControl.convertLbsToGram(answer);
+       double grams = (int) LocationControl.convertLbsToGram(convertPounds);
         //check to see if the number of grams equal the answer than 
         //this is called to the ConvertToPoundsView
-             if (convertPounds == answer)
+             if (grams == answer)
             //return true
                    return true;  
         //else 

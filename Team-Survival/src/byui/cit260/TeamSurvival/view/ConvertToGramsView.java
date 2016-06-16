@@ -17,7 +17,7 @@ public class ConvertToGramsView {
     private String promptMessage;
     
     public ConvertToGramsView(){
-        this.promptMessage = "\n Enter the number that you want to convert in pounds: ";
+        this.promptMessage = "\n You have ....... amount in grams. Convert this number to pounds. Enter the number of gram: ";
         
     }
     
@@ -67,8 +67,13 @@ public class ConvertToGramsView {
         double ConvertPounds = 6876.8;
         //this will be the answer geerated form the computer
         // this Is What I Want TO Convert To Pounds - this Is The Answer From The Computer
-    boolean isValided = LocationControl.checkValidedPounds(ConvertPounds, answer);
-        return isValided;
+    boolean valid = LocationControl.checkValidedPounds(ConvertPounds, answer);
+                   if (!valid){
+                       return false;
+                     //System.out.println("\nNot cool man!");
+                   }
+                   else
+        return valid;
     }
     
 }
