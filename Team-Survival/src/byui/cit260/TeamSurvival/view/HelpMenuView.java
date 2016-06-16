@@ -13,68 +13,32 @@ import team.survival.TeamSurvival;
  *
  * @author Aboli
  */
-public class HelpMenuView{ 
-        
-         private String menu;
-   
-    
+public class HelpMenuView extends View{ 
+ 
     public HelpMenuView(){
-        this.menu = 
-                "\n***********************************"
+           super("\n***********************************"
                +"\n |  Help Menu                      "
                +"\n **********************************"
                +"\n P - Purpose of the Game           "    
                +"\n H - How to move                   " 
                +"\n D - Description of locations      " 
+               +"\n L - Locations on Ship             " 
                +"\n Q - Quit                          " 
-               +"\n***********************************";
+               +"\n***********************************");
     }
     
-    public void displayHelpMenuView(){
-    boolean done = false; //set flag to not done
-    do{
-        String menuOption = this.getmenuOption();
-        if (menuOption.toUpperCase().equals("Q"))//user want to quit
-            return ;
-        
-        //do the requested action and display the next view
-        done = this.doAction(menuOption);
-    }while(!done);
-
-    
-}
-
-    private String getmenuOption() {
-Scanner keyboard = new Scanner(System.in); //get infile from the keyboard
-        String value = ""; //value to be returned is a string
-        boolean valid = false; // initialize the valuve of the vaariable to not valid
-        
-        while (!valid){
-        
-                System.out.println("\n" + this.menu);
-                
-                value = keyboard.nextLine(); //get nextline typed on keyboard
-                value = value.trim(); //Trim off the leading and trailing blanks
-                
-                if (value.length() < 1){
-                System.out.println("\nInvalid value: value cannot be blank");
-                continue;
-
-                } 
-                break;
-        }
-                return value;
-    }  
-
-
-    private boolean doAction(String choice) {
-       choice = choice.toUpperCase();// convert choice to upper case
-       switch(choice){
+    @Override  
+    public boolean doAction(String value) {
+       value = value.toUpperCase();// convert choice to upper case
+       switch(value){
            case "P":
                 this.purposeOfGame();
                 break;
            case "H":
                 this.howToMove();
+                break;
+           case "L":
+                this.locationAroundShip();
                 break;
            case "D":
                  this.descriptionOfLocation();
@@ -109,7 +73,10 @@ Scanner keyboard = new Scanner(System.in); //get infile from the keyboard
                                        + "\n a brief description will be provided.");
     }
 
-
+ private void locationAroundShip() {
+                LocationsOnShipView locationOnShip = new LocationsOnShipView();
+                locationOnShip.display();
+    }
 
     
 
