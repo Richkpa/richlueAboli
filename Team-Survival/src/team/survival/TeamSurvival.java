@@ -51,7 +51,7 @@ public class TeamSurvival {
     public static void main(String[] args) {
           //create the startProgram view and display the start program view.
           StartProgramView startProgramView = new StartProgramView();
-          startProgramView.displayStartProgramView();
+          startProgramView.display();
         
     
     }

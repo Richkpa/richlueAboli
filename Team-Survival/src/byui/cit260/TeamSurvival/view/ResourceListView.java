@@ -62,7 +62,7 @@ public class ResourceListView extends View{
     //call the function "C" to perform the required action
      private void convertToGrams() {
         ConvertToGramsView convertToGrams = new ConvertToGramsView();
-        convertToGrams.displayConvertToGramsView();
+        convertToGrams.display();
     }
      
       private void listOfFoodItems() {

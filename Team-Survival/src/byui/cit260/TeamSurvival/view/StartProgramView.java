@@ -14,12 +14,10 @@ import java.util.Scanner;
  *
  * @author Aboli
  */
-public class StartProgramView {
-    
-    private String promptMessage;
+public class StartProgramView extends View{
     
     public StartProgramView(){
-        this.promptMessage = "\n Please enter your name: ";
+       super( "\n Please enter your name: ");
         
         //display banner when view is created
         this.displayBanner();
@@ -47,45 +45,7 @@ public class StartProgramView {
         );
     }
 
-    public void displayStartProgramView() {
-            boolean done  = false; //set flag to not done
-            do{
-                //prompt for and get the players name 
-                String playerName = this.getPlayerName();
-                if (playerName.toUpperCase().equals("Q"))
-                    return;
-                
-                //do the requested action and display the next view.
-                done = this.doAction(playerName);
-            }
-            while (!done);
-    }
-
-    private String getPlayerName() {
-        
-        Scanner keyboard = new Scanner(System.in); //get infile from the keyboard
-        String value = ""; //value to be returned is a string
-        boolean valid = false; // initialize the valuve of the vaariable to not valid
-        
-        while (!valid){
-        
-                System.out.println("\n" + this.promptMessage);
-                
-                value = keyboard.nextLine(); //get nextline typed on keyboard
-                value = value.trim(); //Trim off the leading and trailing blanks
-                
-                if (value.length() < 1){
-                System.out.println("\nInvalid value: value cannot be blank");
-                continue;
-
-                }
-                break;
-    }
-        return value;
-    }
-        
-
-    private boolean doAction(String playerName){
+    public boolean doAction(String playerName){
         if (playerName.length() < 2){
                 System.out.println("\nInvalid player name:"  + "The name must be greater than one character in lenght");
                 return false;
