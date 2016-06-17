@@ -20,7 +20,7 @@ public class LocationsOnShipView extends View{
                +"\n ***********************************"
                +"\n F - Food items on the ship Room    "    
                +"\n M - Medical Supplies Room          " 
-               +"\n C - Final conversion to grams room " 
+               +"\n C - Final conversion to grams Room " 
                +"\n T - Tools Room                     " 
                +"\n Q - Quit                           " 
                +"\n************************************");
