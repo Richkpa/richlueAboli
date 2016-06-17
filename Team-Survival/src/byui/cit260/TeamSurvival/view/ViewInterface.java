@@ -10,8 +10,11 @@ package byui.cit260.TeamSurvival.view;
  * @author prich
  */
 public interface ViewInterface {
+
     public void display();
+
     public String getInput();
+
     public boolean doAction(String value);
-    
+
 }

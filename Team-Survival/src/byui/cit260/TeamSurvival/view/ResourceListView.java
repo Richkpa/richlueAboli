@@ -11,79 +11,78 @@ import java.util.Scanner;
  *
  * @author prich
  */
-public class ResourceListView extends View{
-    
-      public ResourceListView(){ 
-          super("\n*********************************************"
-               +"\n |  Resource List                            "
-               +"\n ********************************************"
-               +"\n C - Convert pounds to Grams                 "    
-               +"\n F - List of items in food storage           " 
-               +"\n M - List of items in medicine storage       "
-               +"\n I - List of items in inventory storage      "
-               +"\n D - Calculate the distance                  "
-               +"\n A - Calculate the area                      "
-               +"\n Q - Quit                                    " 
-               +"\n*********************************************");
+public class ResourceListView extends View {
+
+    public ResourceListView() {
+        super("\n*********************************************"
+                + "\n |  Resource List                            "
+                + "\n ********************************************"
+                + "\n C - Convert pounds to Grams                 "
+                + "\n F - List of items in food storage           "
+                + "\n M - List of items in medicine storage       "
+                + "\n I - List of items in inventory storage      "
+                + "\n D - Calculate the distance                  "
+                + "\n A - Calculate the area                      "
+                + "\n Q - Quit                                    "
+                + "\n*********************************************");
     }
-     
+
     @Override
     public boolean doAction(String choice) {
-        
+
         choice = choice.toUpperCase();// convert choice to upper case
-        
-        switch (choice){
+
+        switch (choice) {
             case "C":
-               this.convertToGrams();
-               break;
+                this.convertToGrams();
+                break;
             case "F":
-               this.listOfFoodItems();
+                this.listOfFoodItems();
                 break;
             case "M":
-               this.listOfMedicine();
+                this.listOfMedicine();
                 break;
             case "I":
-               this.inventoryLists();
+                this.inventoryLists();
                 break;
             case "D":
-               this.calculateDistance();
+                this.calculateDistance();
                 break;
             case "A":
-               this.calculateArea();
+                this.calculateArea();
                 break;
             default:
                 System.out.println("\nInvalid selection. Try again");
-                       }
+        }
 
-            return false;   
+        return false;
     }
-    
+
     // Creating the resource memu objects
     //call the function "C" to perform the required action
-     private void convertToGrams() {
+    private void convertToGrams() {
         ConvertToGramsView convertToGrams = new ConvertToGramsView();
         convertToGrams.display();
     }
-     
-      private void listOfFoodItems() {
-                               System.out.println("\n***puroseOfGame stub function called");
-    }
-      
-       private void listOfMedicine() {
-                               System.out.println("\n***puroseOfGame stub function called");
-    }
-       
-        private void inventoryLists() {
-                               System.out.println("\n***puroseOfGame stub function called");
-    }
-        
-         private void calculateDistance() {
-                               System.out.println("\n***puroseOfGame stub function called");
-    }
-         
-          private void calculateArea() {
-                               System.out.println("\n***puroseOfGame stub function called");
+
+    private void listOfFoodItems() {
+        System.out.println("\n***puroseOfGame stub function called");
     }
 
-   
+    private void listOfMedicine() {
+        System.out.println("\n***puroseOfGame stub function called");
+    }
+
+    private void inventoryLists() {
+        System.out.println("\n***puroseOfGame stub function called");
+    }
+
+    private void calculateDistance() {
+        System.out.println("\n***puroseOfGame stub function called");
+    }
+
+    private void calculateArea() {
+        System.out.println("\n***puroseOfGame stub function called");
+    }
+
 }
