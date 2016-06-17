@@ -61,10 +61,10 @@ public class ConvertToGramsView {
 
 //call the checkvalidedPounds class form the location control
     
-    private boolean doAction(String number) {
-        double answer = Double.parseDouble(number);
+    private boolean doAction(String Opnumber) { //Passing Value
+        double answer = Double.parseDouble(Opnumber);
         // I want to pass the value "Number" enter from the user
-        double ConvertPounds = 89.06;
+        double ConvertPounds = 6876.8;
         //this will be the answer geerated form the computer
         // this Is What I Want TO Convert To Pounds - this Is The Answer From The Computer
     boolean valid = LocationControl.checkValidedPounds(ConvertPounds, answer);

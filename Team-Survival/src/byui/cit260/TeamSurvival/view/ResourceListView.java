@@ -11,13 +11,10 @@ import java.util.Scanner;
  *
  * @author prich
  */
-public class ResourceListView {
+public class ResourceListView extends View{
     
-    private String menu;
-    
-      public ResourceListView(){
-        this.menu = 
-                "\n*********************************************"
+      public ResourceListView(){ 
+          super("\n*********************************************"
                +"\n |  Resource List                            "
                +"\n ********************************************"
                +"\n C - Convert pounds to Grams                 "    
@@ -27,45 +24,11 @@ public class ResourceListView {
                +"\n D - Calculate the distance                  "
                +"\n A - Calculate the area                      "
                +"\n Q - Quit                                    " 
-               +"\n*********************************************";
+               +"\n*********************************************");
     }
-     public void ResourceListView(){
-    boolean done = false; //set flag to not done
-    do{
-        String menuOption = this.getmenuOption();
-        if (menuOption.toUpperCase().equals("Q"))//user want to quit
-            return ;
-        
-        //do the requested action and display the next view
-        done = this.doAction(menuOption);
-    }while(!done);
-}
-
-    private String getmenuOption() {
-        
-        Scanner keyboard = new Scanner(System.in); //get infile from the keyboard
-        String value = ""; //value to be returned is a string
-        boolean valid = false; // initialize the valuve of the vaariable to not valid
-        
-        while (!valid){
-        
-                System.out.println("\n" + this.menu);
-                
-                value = keyboard.nextLine(); //get nextline typed on keyboard
-                value = value.trim(); //Trim off the leading and trailing blanks
-                
-                if (value.length() < 1){
-                System.out.println("\nInvalid value: value cannot be blank");
-                continue;
-
-                } 
-                break;
-        }
-                return value;
-    }   
-   
-
-    private boolean doAction(String choice) {
+     
+    @Override
+    public boolean doAction(String choice) {
         
         choice = choice.toUpperCase();// convert choice to upper case
         
@@ -121,4 +84,6 @@ public class ResourceListView {
           private void calculateArea() {
                                System.out.println("\n***puroseOfGame stub function called");
     }
+
+   
 }
