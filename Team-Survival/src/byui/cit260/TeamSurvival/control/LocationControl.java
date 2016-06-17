@@ -12,8 +12,9 @@ import java.lang.Math;
  * @author Aboli
  */
 public class LocationControl {
+
     
-    public double calcArea (double radius){
+    public static double calcArea (double radius){
 
         if (radius < 1 || radius > 120){ 
             return -1;
@@ -22,7 +23,7 @@ public class LocationControl {
         return area; 
         
 }
-    public double getFinalResult (double area, double number){
+    public static double getFinalResult (double area, double number){
         
             
         if (number < 90 || number > 360 || area < 1){
