@@ -70,9 +70,15 @@ public class CalcAreaView {
         if (result < 0) {
             System.out.println("\n Invalid input. Please try again");
             return false;
+            
+        } 
+        
+        
+        
+        else {
+                    double finalResult = result + number;
 
-        } else {
-            System.out.println("\n the area for the radius you entered is" + result + "traveller");
+            System.out.println("\n the area for the radius you entered is " + finalResult + " traveller");
             return true;
         }
 
