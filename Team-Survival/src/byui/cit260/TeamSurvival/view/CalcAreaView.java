@@ -15,7 +15,7 @@ import java.util.Scanner;
 public class CalcAreaView {
 
     private String promptMessage;
-
+//constructor function cons fu
     public CalcAreaView() {
         this.promptMessage
                 = "\nProvide a number between numero uno and numero uno, one score and zip : ";
