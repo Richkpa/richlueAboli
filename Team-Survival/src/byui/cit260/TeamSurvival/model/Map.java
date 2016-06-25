@@ -14,6 +14,9 @@ public class Map implements Serializable{
     //class instance variable 
     private int rowCount;
     private int columnCount;
+    
+    private Location location; //Connect the map class to the location. A player
+    //can directly go from the map to the location.
 
     public Map() {
     }
@@ -36,6 +39,16 @@ public class Map implements Serializable{
         this.columnCount = columnCount;
     }
 
+    public Location getLocation() {
+        return location;
+    }
+
+    public void setLocation(Location location) {
+        this.location = location;
+    }
+
+    
+    
     @Override
     public int hashCode() {
         int hash = 7;

@@ -17,6 +17,8 @@ public class Item implements Serializable{
     private String itemType;
     private double availableQuantity;
     private double requiredAmount;
+    
+    private Item[] item;
 
     public String getItemType() {
         return itemType;
@@ -38,6 +40,16 @@ public class Item implements Serializable{
         return requiredAmount;
     }
 
+    public Item[] getItem() {
+        return item;
+    }
+
+    public void setItem(Item[] item) {
+        this.item = item;
+    }
+
+    
+    
     public void setRequiredAmount(double requiredAmount) {
         this.requiredAmount = requiredAmount;
     }

@@ -5,6 +5,7 @@
  */
 package byui.cit260.TeamSurvival.model;
 
+import java.awt.Point;
 import java.io.Serializable;
 import java.util.Objects;
 
@@ -12,80 +13,37 @@ import java.util.Objects;
  *
  * @author prich
  */
-public class Character implements Serializable{
+public enum Character implements Serializable{
+    
+    Simba("He is a young and strong warrior"),
+    Zawuo("The brave and fearless and willing to take any challenge"),
+    Payezin("He is foolish and has courage to do anything");
     
     //class instance variable
-    private String name;
-    private String description;
-    private int coordinates;
-
-    public Character() {
-    }
+    private final String description;
+    private final Point coordinates;
     
-    
+    private Location location;
 
-    public String getName() {
-        return name;
-    }
-
-    public void setName(String name) {
-        this.name = name;
-    }
+    Character(String description) {
+        this.description = description;
+        coordinates = new Point (1,1);
+}
 
     public String getDescription() {
         return description;
     }
 
-    public void setDescription(String description) {
-        this.description = description;
-    }
-
-    public int getCoordinates() {
+    public Point getCoordinates() {
         return coordinates;
+    } 
+
+    public Location getLocation() {
+        return location;
     }
 
-    public void setCoordinates(int coordinates) {
-        this.coordinates = coordinates;
-    }
-
-    @Override
-    public int hashCode() {
-        int hash = 5;
-        hash = 29 * hash + Objects.hashCode(this.name);
-        hash = 29 * hash + Objects.hashCode(this.description);
-        hash = 29 * hash + this.coordinates;
-        return hash;
-    }
-
-    @Override
-    public String toString() {
-        return "Character{" + "name=" + name + ", description=" + description + ", coordinates=" + coordinates + '}';
-    }
-
-    
-    
-    @Override
-    public boolean equals(Object obj) {
-        if (this == obj) {
-            return true;
-        }
-        if (obj == null) {
-            return false;
-        }
-        if (getClass() != obj.getClass()) {
-            return false;
-        }
-        final Character other = (Character) obj;
-        if (this.coordinates != other.coordinates) {
-            return false;
-        }
-        if (!Objects.equals(this.name, other.name)) {
-            return false;
-        }
-        if (!Objects.equals(this.description, other.description)) {
-            return false;
-        }
-        return true;
+    public void setLocation(Location location) {
+        this.location = location;
     }
     
     

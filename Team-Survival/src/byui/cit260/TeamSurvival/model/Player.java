@@ -15,6 +15,8 @@ public class Player implements Serializable {
     //class instance variable 
     private String name;
     private int lessMove; 
+    
+    private Character character;
 
     public Player() {
     }
@@ -37,6 +39,16 @@ public class Player implements Serializable {
         this.lessMove = lessMove;
     }   
 
+    public Character getCharacter() {
+        return character;
+    }
+
+    public void setCharacter(Character character) {
+        this.character = character;
+    }
+
+    
+    
     @Override
     public int hashCode() {
         int hash = 5;

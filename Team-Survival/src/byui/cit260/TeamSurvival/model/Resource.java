@@ -17,6 +17,8 @@ public class Resource implements Serializable {
     //class instance variable 
     private String resourceType;
     private String description;
+    
+    private Item item; //the item list can be access through the resource class
 
     public Resource() {
     }
@@ -38,6 +40,16 @@ public class Resource implements Serializable {
         this.description = description;
     }
 
+    public Item getItem() {
+        return item;
+    }
+
+    public void setItem(Item item) {
+        this.item = item;
+    }
+
+    
+    
     @Override
     public int hashCode() {
         int hash = 7;

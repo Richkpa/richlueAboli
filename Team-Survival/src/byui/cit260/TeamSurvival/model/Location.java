@@ -17,6 +17,12 @@ public class Location implements Serializable{
     private int column;
     private int locationsVisited;
     private int locationsRemaining;
+    
+    private Item item;
+    private Obstacle obstacle;
+    private Scene scene;
+    private Resource resource;
+    private Map map;
 
     public Location() {
     }
@@ -54,6 +60,48 @@ public class Location implements Serializable{
         this.locationsRemaining = locationsRemaining;
     }
 
+    public Item getItem() {
+        return item;
+    }
+
+    public void setItem(Item item) {
+        this.item = item;
+    }
+
+    public Obstacle getObstacle() {
+        return obstacle;
+    }
+
+    public void setObstacle(Obstacle obstacle) {
+        this.obstacle = obstacle;
+    }
+
+    public Scene getScene() {
+        return scene;
+    }
+
+    public void setScene(Scene scene) {
+        this.scene = scene;
+    }
+
+    public Resource getResource() {
+        return resource;
+    }
+
+    public void setResource(Resource resource) {
+        this.resource = resource;
+    }
+
+    public Map getMap() {
+        return map;
+    }
+
+    public void setMap(Map map) {
+        this.map = map;
+    }
+
+    
+    
     @Override
     public int hashCode() {
         int hash = 5;

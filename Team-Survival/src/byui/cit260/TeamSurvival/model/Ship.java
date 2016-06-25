@@ -18,6 +18,8 @@ public class Ship implements Serializable{
     private double width;
     private double length;
     private double height;
+    
+    
 
     public Ship() {
     }

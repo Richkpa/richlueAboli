@@ -18,6 +18,9 @@ public class Scene implements Serializable{
     
     private String type;
     private String description;
+    
+    private Location location;
+    
 //generate constructor function 
     public Scene() {
     }
@@ -40,6 +43,16 @@ public class Scene implements Serializable{
         this.description = description;
     }
 
+    public Location getLocation() {
+        return location;
+    }
+
+    public void setLocation(Location location) {
+        this.location = location;
+    }
+
+    
+    
     @Override
     public int hashCode() {
         int hash = 7;
