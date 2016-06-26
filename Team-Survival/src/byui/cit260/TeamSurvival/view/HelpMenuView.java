@@ -21,6 +21,7 @@ public class HelpMenuView extends View {
                 + "\n **********************************"
                 + "\n P - Purpose of the Game           "
                 + "\n H - How to move                   "
+                + "\n Z - The authors                   "
                 + "\n D - Description of locations      "
                 + "\n L - Locations on Ship             "
                 + "\n Q - Quit                          "
@@ -33,6 +34,9 @@ public class HelpMenuView extends View {
         switch (value) {
             case "P":
                 this.purposeOfGame();
+                break;
+            case "Z":
+                this.aboutTheDevelopers();
                 break;
             case "H":
                 this.howToMove();
@@ -72,6 +76,19 @@ public class HelpMenuView extends View {
     private void locationAroundShip() {
         LocationsOnShipView locationOnShip = new LocationsOnShipView();
         locationOnShip.display();
+    }
+
+    private void aboutTheDevelopers() {
+        System.out.println
+                ("\n***********************************"
+                + "\n |  About the Developers             "
+                + "\n **********************************  "
+                + "\n Aboli is a village boy from Nigeria "
+                + "\n Father of a beautiful daughter      "
+                + "\n Husband to a beautifull wife        "
+                + "\n<br>           "
+                + "\n Richlue- The king of Liberia.       "
+                + "\n***********************************");
     }
 
 }
