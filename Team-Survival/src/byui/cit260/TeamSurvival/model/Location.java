@@ -6,6 +6,7 @@
 package byui.cit260.TeamSurvival.model;
 
 import java.io.Serializable;
+import java.util.ArrayList;
 
 /**
  *
@@ -17,12 +18,14 @@ public class Location implements Serializable{
     private int column;
     private int locationsVisited;
     private int locationsRemaining;
+    private ArrayList<Character> character;
     
     private Item item;
     private Obstacle obstacle;
     private Scene scene;
     private Resource resource;
     private Map map;
+    
 
     public Location() {
     }
@@ -143,6 +146,14 @@ public class Location implements Serializable{
             return false;
         }
         return true;
+    }
+
+    void setVisited(boolean b) {
+        System.out.println("\n***puroseOfGame stub function called");
+    }
+
+    public void getScene(Scene scene) {
+         System.out.println("\n***puroseOfGame stub function called");
     }
     
     

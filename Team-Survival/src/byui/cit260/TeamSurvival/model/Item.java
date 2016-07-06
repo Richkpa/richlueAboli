@@ -17,8 +17,11 @@ public class Item implements Serializable{
     private String itemType;
     private double availableQuantity;
     private double requiredAmount;
+    private double weight;
     
-    private Item[] item;
+    public Item() {
+        
+    };
 
     public String getItemType() {
         return itemType;
@@ -40,20 +43,20 @@ public class Item implements Serializable{
         return requiredAmount;
     }
 
-    public Item[] getItem() {
-        return item;
-    }
-
-    public void setItem(Item[] item) {
-        this.item = item;
-    }
-
-    
-    
     public void setRequiredAmount(double requiredAmount) {
         this.requiredAmount = requiredAmount;
     }
 
+    public double getWeight() {
+        return weight;
+    }
+
+    public void setWeight(double weight) {
+        this.weight = weight;
+    }
+
+    
+    
     @Override
     public int hashCode() {
         int hash = 7;
@@ -92,6 +95,18 @@ public class Item implements Serializable{
             return false;
         }
         return true;
+    }
+
+    public void setDescription(String bread) {
+       System.out.println("\n***puroseOfGame stub function called");
+    }
+
+    public void setQuantityInStock(int i) {
+        System.out.println("\n***puroseOfGame stub function called");
+    }
+
+    public Object getDescription() {
+        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
     }
     
     

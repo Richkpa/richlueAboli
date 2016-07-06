@@ -4,6 +4,7 @@
  * and open the template in the editor.
  */
 package byui.cit260.TeamSurvival.model;
+import byui.cit260.TeamSurvival.control.GameControl;
 import java.io.Serializable;
 /**
  *
@@ -18,7 +19,7 @@ public class Game implements Serializable{
     private Player player; //connect to the location to the payer class
     private Map map; //connect the location to player class
     private Character character; //connect the location to character class
-    private Item item;
+    private Item[] item;
     
     public Game() {
     }
@@ -66,16 +67,16 @@ public class Game implements Serializable{
         this.character = character;
     }
 
-    public Item getItem() {
+    public Item[] getItem() {
         return item;
     }
 
-    public void setItem(Item item) {
+    public void setItem(Item[] item) {
         this.item = item;
     }
     
-    
 
+    
     @Override
     public int hashCode() {
         int hash = 3;
@@ -102,6 +103,8 @@ public class Game implements Serializable{
         }
         return true;
     }
+
+   
     
     
 }

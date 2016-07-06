@@ -5,24 +5,47 @@
  */
 package byui.cit260.TeamSurvival.model;
 import java.io.Serializable;
+import java.util.ArrayList;
 /**
  *
  * @author prich
  */
 public class Map implements Serializable{
-    
+  
     //class instance variable 
     private int rowCount;
     private int columnCount;
-    
-    private Location location; //Connect the map class to the location. A player
-    //can directly go from the map to the location.
+    private Scene scene;
+    private boolean visted;
+    private Location[][] locations; //Connect the map class to the locations. A player
+    //can directly go from the map to the locations.
 
     public Map() {
     }
-    
-    
+    public Map(int rowCount, int columnCount) {
+        
+        if (rowCount < 1 || columnCount < 1) {
+            System.out.print("The number of rwo and column cannot be zero");
+            return;
+    }
 
+        this.rowCount = rowCount;
+        this.columnCount = columnCount;
+        
+        //create 2-D array for Location objects
+        this.locations = new Location[rowCount][columnCount];
+        
+        for (int row = 0; row < rowCount; row++) {
+            for (int column = 0; column < columnCount; column++) {
+                //create and initialize new Location object instance
+                Location location = new Location();
+                location.setColumn(column);
+                location.setRow(row);
+                location.setVisited(false);
+            }
+        }
+    }
+   
     public int getRowCount() {
         return rowCount;
     }
@@ -39,12 +62,28 @@ public class Map implements Serializable{
         this.columnCount = columnCount;
     }
 
-    public Location getLocation() {
-        return location;
+    public byui.cit260.TeamSurvival.model.Location[][] getLocations() {
+        return locations;
     }
 
-    public void setLocation(Location location) {
-        this.location = location;
+    public void setLocations(Location[][] locations) {
+        this.locations = locations;
+    }
+
+    public Scene getScene() {
+        return scene;
+    }
+
+    public void setScene(Scene scene) {
+        this.scene = scene;
+    }
+
+    public boolean isVisted() {
+        return visted;
+    }
+
+    public void setVisted(boolean visted) {
+        this.visted = visted;
     }
 
     
@@ -84,6 +123,5 @@ public class Map implements Serializable{
         }
         return true;
     }
-    
    
 }

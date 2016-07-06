@@ -22,7 +22,14 @@ public class Ship implements Serializable{
     
 
     public Ship() {
+        this.description = "\nThis is the ship of the survival. You must be strong and willing"
+                         + "\nto take risk. What is life without taking risk?";
+        this.height = 0;
+        this.length = 0;
+        this.width = 0;
+        
     }
+    
     
     
 
