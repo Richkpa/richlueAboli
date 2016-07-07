@@ -22,7 +22,7 @@ public class Item implements Serializable{
     public Item() {
         
     };
-
+    
     public String getItemType() {
         return itemType;
     }
@@ -97,18 +97,5 @@ public class Item implements Serializable{
         return true;
     }
 
-    public void setDescription(String bread) {
-       System.out.println("\n***puroseOfGame stub function called");
-    }
-
-    public void setQuantityInStock(int i) {
-        System.out.println("\n***puroseOfGame stub function called");
-    }
-
-    public Object getDescription() {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
-    }
-    
-    
-    
+ 
 }

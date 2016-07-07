@@ -82,22 +82,22 @@ public class GameControl {
        Item[] items = new Item[3];
        
        Item rice = new Item();
-       rice.setDescription("Rice");
-       rice.setQuantityInStock(0);
+       rice.setItemType("Rice");
+       rice.setAvailableQuantity(0);
        rice.setRequiredAmount(0);
        rice.setWeight(7.5);
        items[ItemIndex.rice.ordinal()] = rice;
        
        Item bread = new Item();
-       bread.setDescription("Bread");
-       bread.setQuantityInStock(0);
+       bread.setItemType("Bread");
+       bread.setAvailableQuantity(0);
        bread.setRequiredAmount(0);
        bread.setWeight(2);
        items[ItemIndex.bread.ordinal()] = bread;
               
        Item water = new Item();
-       water.setDescription("Water");
-       water.setQuantityInStock(0);
+       water.setItemType("Water");
+       water.setAvailableQuantity(0);
        water.setRequiredAmount(0);
        water.setWeight(4);
        items[ItemIndex.water.ordinal()] = water;

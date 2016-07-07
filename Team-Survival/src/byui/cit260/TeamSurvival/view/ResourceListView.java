@@ -99,7 +99,7 @@ public class ResourceListView extends View {
        //for each inventory item
        for (Item item : items) {
            line = new StringBuilder("                                      ");
-           line.insert(0, item.getDescription());
+           line.insert(0, item.getItemType());
            line.insert(23, item.getRequiredAmount());
            line.insert(33, item.getAvailableQuantity());
            
