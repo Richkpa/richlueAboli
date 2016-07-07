@@ -11,9 +11,8 @@ package byui.cit260.TeamSurvival.model;
  */
 public enum ItemIndex {
         bread,
-        water,
-        rice;
-    
+        rice,
+        water;
     
     }
       

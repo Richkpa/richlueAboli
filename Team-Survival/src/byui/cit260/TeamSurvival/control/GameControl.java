@@ -29,13 +29,13 @@ public class GameControl {
        Item[] ItemIndex = GameControl.createItemList();
        game.setItem(ItemIndex);
         
-        Ship ship = new Ship();
-        game.setShip(ship);
-        
-        Map map = MapControl.createMap();
-        game.setMap(map);
-        
-        MapControl.moveCharactersToStartingLocation(map);
+//        Ship ship = new Ship();
+//        game.setShip(ship);
+//        
+//        Map map = MapControl.createMap();
+//        game.setMap(map);
+//        
+//        MapControl.moveCharactersToStartingLocation(map);
     }
     
     public static Player createPlayer(String name){
@@ -59,9 +59,34 @@ public class GameControl {
             return player;
         }
 
+        public static Item[] sortingWeight(Item[] itemList) {
+            
+            for (int i = 0; i < itemList.length - 1; i++)
+        {
+            int index = i;
+            for (int j = i + 1; j < itemList.length; j++)
+                if (itemList[j].getWeight() < itemList[index].getWeight())
+                    index = j;
+      
+            double smallerNumber = itemList[index].getWeight(); 
+            itemList[index] = itemList[i];
+            itemList[i].setWeight(smallerNumber);
+            
+        }
+   
+            return itemList;
+        }
+        
     public static Item[] createItemList() {
        //create array(list) of items lists
-       Item[] items = new Item[14];
+       Item[] items = new Item[3];
+       
+       Item rice = new Item();
+       rice.setDescription("Rice");
+       rice.setQuantityInStock(0);
+       rice.setRequiredAmount(0);
+       rice.setWeight(7.5);
+       items[ItemIndex.rice.ordinal()] = rice;
        
        Item bread = new Item();
        bread.setDescription("Bread");
@@ -77,16 +102,10 @@ public class GameControl {
        water.setWeight(4);
        items[ItemIndex.water.ordinal()] = water;
        
-       Item rice = new Item();
-       rice.setDescription("Rice");
-       rice.setQuantityInStock(0);
-       rice.setRequiredAmount(0);
-       rice.setWeight(7.5);
-       items[ItemIndex.rice.ordinal()] = rice;
+       
        
        return items;
     }
-
   
        
     

@@ -5,6 +5,7 @@
  */
 package byui.cit260.TeamSurvival.view;
 
+import byui.cit260.TeamSurvival.control.GameControl;
 import byui.cit260.TeamSurvival.model.Game;
 import byui.cit260.TeamSurvival.model.Item;
 import byui.cit260.TeamSurvival.model.ItemIndex;
@@ -26,6 +27,7 @@ public class ResourceListView extends View {
                 + "\n M - List of items in medicine storage       "
                 + "\n I - List of items in inventory storage      "
                 + "\n D - Calculate the distance                  "
+                + "\n S - Sorting the list of Items               "
                 + "\n A - Calculate the area                      "
                 + "\n Q - Quit                                    "
                 + "\n*********************************************");
@@ -39,6 +41,9 @@ public class ResourceListView extends View {
         switch (choice) {
             case "C":
                 this.convertToGrams();
+                break;
+            case "S":
+                this.sortingItem();
                 break;
             case "F":
                 this.listOfFoodItems();
@@ -111,6 +116,21 @@ public class ResourceListView extends View {
         CalcAreaView areaView = new CalcAreaView();
         areaView.displayCalcAreaView();
 
+    }
+
+    private void sortingItem() {
+       Game game = TeamSurvival.getCurrentGame();
+       
+       for (Item item: game.getItem()) {
+           System.out.println(item.getWeight());
+       }
+       
+       Item[] itemList = GameControl.sortingWeight(game.getItem());
+    
+       for (Item item: itemList) {
+           System.out.println(item.getWeight());
+       }
+    
     }
 
 }
