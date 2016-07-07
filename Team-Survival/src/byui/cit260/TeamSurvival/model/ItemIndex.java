@@ -12,7 +12,7 @@ package byui.cit260.TeamSurvival.model;
 public enum ItemIndex {
         bread,
         rice,
-        water;
+    water;
     
     }
       
