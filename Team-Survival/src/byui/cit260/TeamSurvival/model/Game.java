@@ -4,6 +4,7 @@
  * and open the template in the editor.
  */
 package byui.cit260.TeamSurvival.model;
+import byui.cit260.TeamSurvival.control.GameControl;
 import java.io.Serializable;
 /**
  *
@@ -76,8 +77,8 @@ public class Game implements Serializable{
 
     
     
-    
 
+    
     @Override
     public int hashCode() {
         int hash = 3;
@@ -104,6 +105,8 @@ public class Game implements Serializable{
         }
         return true;
     }
+
+   
     
     
 }

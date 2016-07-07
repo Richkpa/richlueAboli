@@ -18,8 +18,9 @@ public class Scene implements Serializable{
     
     private String type;
     private String description;
-    
-    private Location location;
+    private String mapSymbol;
+    private String Blocked;
+    private int onOfMoves;
     
 //generate constructor function 
     public Scene() {
@@ -43,13 +44,33 @@ public class Scene implements Serializable{
         this.description = description;
     }
 
-    public Location getLocation() {
-        return location;
+    public String getMapSymbol() {
+        return mapSymbol;
     }
 
-    public void setLocation(Location location) {
-        this.location = location;
+    public void setMapSymbol(String mapSymbol) {
+        this.mapSymbol = mapSymbol;
     }
+
+    public String getBlocked() {
+        return Blocked;
+    }
+
+    public void setBlocked(String Blocked) {
+        this.Blocked = Blocked;
+    }
+
+    public int getOnOfMoves() {
+        return onOfMoves;
+    }
+
+    public void setOnOfMoves(int onOfMoves) {
+        this.onOfMoves = onOfMoves;
+    }
+
+    
+    
+
 
     
     
@@ -86,6 +107,10 @@ public class Scene implements Serializable{
             return false;
         }
         return true;
+    }
+
+    public void setBlocked(boolean b) {
+        System.out.println("\n***puroseOfGame stub function called");
     }
     
     
