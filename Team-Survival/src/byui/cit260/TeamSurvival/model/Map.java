@@ -16,7 +16,7 @@ public class Map implements Serializable{
     private int rowCount;
     private int columnCount;
     private Scene scene;
-    private boolean visted;
+    
     private Location[][] locations; //Connect the map class to the locations. A player
     //can directly go from the map to the locations.
 
@@ -77,15 +77,6 @@ public class Map implements Serializable{
     public void setScene(Scene scene) {
         this.scene = scene;
     }
-
-    public boolean isVisted() {
-        return visted;
-    }
-
-    public void setVisted(boolean visted) {
-        this.visted = visted;
-    }
-
     
     
     @Override

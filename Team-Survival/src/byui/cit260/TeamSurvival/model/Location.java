@@ -7,6 +7,7 @@ package byui.cit260.TeamSurvival.model;
 
 import java.io.Serializable;
 import java.util.ArrayList;
+import java.util.Objects;
 
 /**
  *
@@ -16,7 +17,7 @@ public class Location implements Serializable{
     
     private int row;
     private int column;
-    private int locationsVisited;
+    private boolean locationsVisited;
     private int locationsRemaining;
     private ArrayList<Character> character;
     
@@ -25,6 +26,7 @@ public class Location implements Serializable{
     private Scene scene;
     private Resource resource;
     private Map map;
+    private boolean visited;
     
 
     public Location() {
@@ -33,6 +35,22 @@ public class Location implements Serializable{
     
     public int getRow() {
         return row;
+    }
+
+    public boolean isLocationsVisited() {
+        return locationsVisited;
+    }
+
+    public void setLocationsVisited(boolean locationsVisited) {
+        this.locationsVisited = locationsVisited;
+    }
+
+    public ArrayList<Character> getCharacter() {
+        return character;
+    }
+
+    public void setCharacter(ArrayList<Character> character) {
+        this.character = character;
     }
 
     public void setRow(int row) {
@@ -47,13 +65,7 @@ public class Location implements Serializable{
         this.column = column;
     }
 
-    public int getLocationsVisited() {
-        return locationsVisited;
-    }
-
-    public void setLocationsVisited(int locationsVisited) {
-        this.locationsVisited = locationsVisited;
-    }
+   
 
     public int getLocationsRemaining() {
         return locationsRemaining;
@@ -103,24 +115,30 @@ public class Location implements Serializable{
         this.map = map;
     }
 
+    public boolean isVisited() {
+        return visited;
+    }
+
+    public void setVisited(boolean visited) {
+        this.visited = visited;
+    }
+
     
     
     @Override
     public int hashCode() {
-        int hash = 5;
-        hash = 79 * hash + this.row;
-        hash = 79 * hash + this.column;
-        hash = 79 * hash + this.locationsVisited;
-        hash = 79 * hash + this.locationsRemaining;
+        int hash = 7;
+        hash = 17 * hash + this.column;
+        hash = 17 * hash + (this.locationsVisited ? 1 : 0);
+        hash = 17 * hash + this.locationsRemaining;
+        hash = 17 * hash + Objects.hashCode(this.character);
+        hash = 17 * hash + Objects.hashCode(this.item);
+        hash = 17 * hash + Objects.hashCode(this.obstacle);
+        hash = 17 * hash + Objects.hashCode(this.scene);
+        hash = 17 * hash + Objects.hashCode(this.map);
         return hash;
-    } 
-
-    @Override
-    public String toString() {
-        return "Location{" + "row=" + row + ", column=" + column + ", locationsVisited=" + locationsVisited + ", locationsRemaining=" + locationsRemaining + '}';
     }
 
-    
     @Override
     public boolean equals(Object obj) {
         if (this == obj) {
@@ -145,21 +163,31 @@ public class Location implements Serializable{
         if (this.locationsRemaining != other.locationsRemaining) {
             return false;
         }
+        if (!Objects.equals(this.character, other.character)) {
+            return false;
+        }
+        if (!Objects.equals(this.item, other.item)) {
+            return false;
+        }
+        if (!Objects.equals(this.obstacle, other.obstacle)) {
+            return false;
+        }
+        if (!Objects.equals(this.scene, other.scene)) {
+            return false;
+        }
+        if (!Objects.equals(this.resource, other.resource)) {
+            return false;
+        }
+        if (!Objects.equals(this.map, other.map)) {
+            return false;
+        }
         return true;
     }
 
-    void setVisited(boolean b) {
-        System.out.println("\n***puroseOfGame stub function called");
+    @Override
+    public String toString() {
+        return "Location{" + "row=" + row + ", column=" + column + ", locationsVisited=" + locationsVisited + ", locationsRemaining=" + locationsRemaining + ", character=" + character + ", item=" + item + ", obstacle=" + obstacle + ", scene=" + scene + ", resource=" + resource + ", map=" + map + '}';
     }
 
-    public void getScene(Scene scene) {
-         System.out.println("\n***puroseOfGame stub function called");
-    }
-    
-    
-
-
-
-    
     
 }

@@ -5,7 +5,11 @@
  */
 package byui.cit260.TeamSurvival.view;
 
+import byui.cit260.TeamSurvival.model.Game;
+import byui.cit260.TeamSurvival.model.Location;
+import byui.cit260.TeamSurvival.model.Map;
 import java.util.Scanner;
+import team.survival.TeamSurvival;
 
 /**
  *
@@ -50,7 +54,31 @@ public class GameMenuView extends View {
 //        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
 //    }
     private void viewMap() {
-        System.out.println("\nviewMap() stub function called here");
+         Game game = TeamSurvival.getCurrentGame();
+         Map map = game.getMap();
+         Location[][] locations = map.getLocations();
+         
+         String dash = "-";
+         String divider = new String (new char[150]).replace("\0", dash);
+         
+         System.out.println("The Map of Zulu");
+    for (int i = 0; i < locations.length - 1; i++) {
+        System.out.println(divider);
+          System.out.print(i+1);
+         for (int j = 0; j < locations[i].length - 1; j++) {
+             System.out.print("|");
+             Location currentLocation = locations[i][j];
+            if (currentLocation.isLocationsVisited()) {
+                System.out.print(locations[i][j].getScene().getMapSymbol());
+            }
+            else {
+           System.out.print(" ?? ");
+            }
+            System.out.println("|");
+         }
+         System.out.println(divider);
+         System.out.println("-");
+    }
     }
 
     private void movesRemaining() {
@@ -62,8 +90,6 @@ public class GameMenuView extends View {
         resourceList.display();
     }
 
-    void displayGameMenuView() {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
-    }
+    
 
 }
