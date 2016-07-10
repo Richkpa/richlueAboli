@@ -11,7 +11,7 @@ import byui.cit260.TeamSurvival.model.Player;
 import java.util.Scanner;
 
 /**
- *
+ *  
  * @author Aboli
  */
 public class StartProgramView extends View {

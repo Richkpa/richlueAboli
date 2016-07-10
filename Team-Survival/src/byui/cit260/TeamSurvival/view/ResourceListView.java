@@ -134,5 +134,3 @@ public class ResourceListView extends View {
     }
 
 }
-
-
