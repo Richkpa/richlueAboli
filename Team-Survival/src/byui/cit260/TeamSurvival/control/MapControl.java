@@ -27,7 +27,7 @@ class MapControl {
  
  public static Map createMap() {
         //create the map
-       Map map = new Map (20, 20);
+       Map map = new Map (5, 5);
         
         //create the list of different sences in the game
        Scene[] scenes = createScenes();
@@ -73,10 +73,32 @@ class MapControl {
        Location[][] location = map.getLocations();
        
        //start point
-       location[0][0].getScene(scenes[SceneType.start.ordinal()]);
-       location[0][1].getScene(scenes[SceneType.foodRoom.ordinal()]);
-       location[0][2].getScene(scenes[SceneType.medicineRoom.ordinal()]);
-       location[0][3].getScene(scenes[SceneType.medicineRoom.ordinal()]);
+       location[0][0].setScene(scenes[SceneType.start.ordinal()]);
+       location[0][1].setScene(scenes[SceneType.foodRoom.ordinal()]);
+       location[0][2].setScene(scenes[SceneType.medicineRoom.ordinal()]);
+       location[0][3].setScene(scenes[SceneType.calculateDistance.ordinal()]);
+       location[0][4].setScene(scenes[SceneType.start.ordinal()]);
+       location[1][0].setScene(scenes[SceneType.foodRoom.ordinal()]);
+       location[1][1].setScene(scenes[SceneType.medicineRoom.ordinal()]);
+       location[1][2].setScene(scenes[SceneType.calculateDistance.ordinal()]);
+       location[1][3].setScene(scenes[SceneType.start.ordinal()]);
+       location[1][4].setScene(scenes[SceneType.foodRoom.ordinal()]);
+       location[2][0].setScene(scenes[SceneType.medicineRoom.ordinal()]);
+       location[2][1].setScene(scenes[SceneType.calculateDistance.ordinal()]);
+       location[2][2].setScene(scenes[SceneType.start.ordinal()]);
+       location[2][3].setScene(scenes[SceneType.foodRoom.ordinal()]);
+       location[2][4].setScene(scenes[SceneType.medicineRoom.ordinal()]);
+       location[3][0].setScene(scenes[SceneType.calculateDistance.ordinal()]);
+       location[3][1].setScene(scenes[SceneType.start.ordinal()]);
+       location[3][2].setScene(scenes[SceneType.foodRoom.ordinal()]);
+       location[3][3].setScene(scenes[SceneType.medicineRoom.ordinal()]);
+       location[3][4].setScene(scenes[SceneType.calculateDistance.ordinal()]);
+       location[4][0].setScene(scenes[SceneType.start.ordinal()]);
+       location[4][1].setScene(scenes[SceneType.foodRoom.ordinal()]);
+       location[4][2].setScene(scenes[SceneType.medicineRoom.ordinal()]);
+       location[4][3].setScene(scenes[SceneType.calculateDistance.ordinal()]);
+       location[4][4].setScene(scenes[SceneType.calculateWeight.ordinal()]);
+       
           
        
     }

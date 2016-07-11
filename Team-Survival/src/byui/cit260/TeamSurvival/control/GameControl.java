@@ -39,10 +39,10 @@ public class GameControl {
 //        Ship ship = new Ship();
 //        game.setShip(ship);
 //        
-//        Map map = MapControl.createMap();
-//        game.setMap(map);
-//        
-//        MapControl.moveCharactersToStartingLocation(map);
+       Map map = MapControl.createMap();
+       game.setMap(map);
+       
+       MapControl.moveCharactersToStartingLocation(map);
     }
     
     public static Player createPlayer(String name){
