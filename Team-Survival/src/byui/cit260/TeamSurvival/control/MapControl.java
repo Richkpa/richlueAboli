@@ -9,6 +9,8 @@ import byui.cit260.TeamSurvival.model.Location;
 import byui.cit260.TeamSurvival.model.Map;
 import byui.cit260.TeamSurvival.model.Scene;
 import byui.cit260.TeamSurvival.model.SceneType;
+import java.awt.Point;
+import team.survival.TeamSurvival;
 
 /**
  *
@@ -78,8 +80,25 @@ class MapControl {
           
        
     }
+    
+        public static void moveCharactersToStartingLocation(Map map){
+            System.out.println("Some function called here");
+        }
 
-    static void moveCharactersToStartingLocation(Map map) {
-        System.out.println("\n***puroseOfGame stub function called");
-    }
+
+//    public static void moveCharactersToStartingLocation(Character character, Point coordinates)
+//                    throws MapControlException{
+//Map map = TeamSurvival.getCurrentGame().getMap();
+//int newRow = coordinates.x;
+//int newColumn = coordinates.y;
+//
+//if(newRow < 0 || newRow >= map.getRowCount()|| newColumn < 0 || newColumn >= map.getColumnCount()){
+//   throw new MapControlException("Cannot move character to location"
+//                                  + coordinates.x + "," coordinates.y
+//                                 + "because the location is outside the"
+//                                 + " bounds of the map.";
+//    }
+//return 0;
 }
+
+    

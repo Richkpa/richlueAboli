@@ -153,6 +153,8 @@ public class Location implements Serializable{
     }
 
     public void getScene(Scene scene) {
+//        Scene nextScene = new Scene();
+//        nextScene.display();
          System.out.println("\n***puroseOfGame stub function called");
     }
     
