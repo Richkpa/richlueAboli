@@ -35,7 +35,7 @@ public class MainMenuView extends View {
                 this.startNewGame();
                 break;
             case "G":
-                this.startExistingGame();
+                this.startSavedGame();
                 break;
             case "H":
                 this.displayHelpMenu();
@@ -58,14 +58,14 @@ public class MainMenuView extends View {
         gameMenu.display();
     }
 
-    private void startExistingGame() {
+    private void startSavedGame() {
 //prompts user for name of file to save the game in
         this.console.println("\n\n Enter the file path for the file where the gane is to be saved");
         String filePath = this.getInput();
         
         try{
             //save gane to the specified file.
-            GameControl.getExistingGame(filePath);
+            GameControl.getSavedGame(filePath);
         } catch (Exception ex){
             ErrorView.display("MainMenuView", ex.getMessage());
         }
@@ -82,7 +82,7 @@ public class MainMenuView extends View {
     }
 
     private void saveGame() {
-        System.out.println("\n***saveGame function called");
+//        System.out.println("\n***saveGame function called");
 
         //prompts user for name of file to save the game in
         this.console.println("\n\n Enter the file path for the file where the gane is to be saved");

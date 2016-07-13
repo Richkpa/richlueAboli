@@ -25,97 +25,93 @@ import team.survival.TeamSurvival;
  * @author Aboli
  */
 public class GameControl {
-    
+
     public static void createNewGame(Player player) {
-    
+
         Game game = new Game();
         TeamSurvival.setCurrentGame(game);
-        
+
         game.setPlayer(player);
-     
-       Item[] ItemIndex = GameControl.createItemList();
-       game.setItem(ItemIndex);
-        
+
+        Item[] ItemIndex = GameControl.createItemList();
+        game.setItem(ItemIndex);
+
 //        Ship ship = new Ship();
 //        game.setShip(ship);
 //        
-       Map map = MapControl.createMap();
-       game.setMap(map);
-       
-       MapControl.moveCharactersToStartingLocation(map);
+        Map map = MapControl.createMap();
+        game.setMap(map);
+
+        MapControl.moveCharactersToStartingLocation(map);
     }
-    
-    public static Player createPlayer(String name){
-         
-        if (name == null){
+
+    public static Player createPlayer(String name) {
+
+        if (name == null) {
             return null;
         }
-        
-        
-        
-        
+
         Player player = new Player();
         player.setName(name);
-        
-        TeamSurvival.setPlayer(player); //save the player
-         return player;
-    }
-    
-        public static Player createPlayer(Player player){
-            System.out.println("\ncreatenewGame function called");
-            return player;
-        }
 
-        public static Item[] sortingWeight(Item[] itemList) {
-            
-            for (int i = 0; i < itemList.length - 1; i++)
-        {
+        TeamSurvival.setPlayer(player); //save the player
+        return player;
+    }
+
+    public static Player createPlayer(Player player) {
+        System.out.println("\ncreatenewGame function called");
+        return player;
+    }
+
+    public static Item[] sortingWeight(Item[] itemList) {
+
+        for (int i = 0; i < itemList.length - 1; i++) {
             int index = i;
-            for (int j = i + 1; j < itemList.length; j++)
-                if (itemList[j].getWeight() < itemList[index].getWeight())
+            for (int j = i + 1; j < itemList.length; j++) {
+                if (itemList[j].getWeight() < itemList[index].getWeight()) {
                     index = j;
-      
-            double smallerNumber = itemList[index].getWeight(); 
+                }
+            }
+
+            double smallerNumber = itemList[index].getWeight();
             itemList[index] = itemList[i];
             itemList[i].setWeight(smallerNumber);
-            
+
         }
-   
-            return itemList;
-        }
-        
+
+        return itemList;
+    }
+
     public static Item[] createItemList() {
-       //create array(list) of items lists
-       Item[] items = new Item[3];
-       
-       Item rice = new Item();
-       rice.setItemType("Rice");
-       rice.setAvailableQuantity(0);
-       rice.setRequiredAmount(0);
-       rice.setWeight(7.5);
-       items[ItemIndex.rice.ordinal()] = rice;
-       
-       Item bread = new Item();
-       bread.setItemType("Bread");
-       bread.setAvailableQuantity(0);
-       bread.setRequiredAmount(0);
-       bread.setWeight(2);
-       items[ItemIndex.bread.ordinal()] = bread;
-              
-       Item water = new Item();
-       water.setItemType("Water");
-       water.setAvailableQuantity(0);
-       water.setRequiredAmount(0);
-       water.setWeight(4);
-       items[ItemIndex.water.ordinal()] = water;
-       
-       
-       
-       return items;
+        //create array(list) of items lists
+        Item[] items = new Item[3];
+
+        Item rice = new Item();
+        rice.setItemType("Rice");
+        rice.setAvailableQuantity(0);
+        rice.setRequiredAmount(0);
+        rice.setWeight(7.5);
+        items[ItemIndex.rice.ordinal()] = rice;
+
+        Item bread = new Item();
+        bread.setItemType("Bread");
+        bread.setAvailableQuantity(0);
+        bread.setRequiredAmount(0);
+        bread.setWeight(2);
+        items[ItemIndex.bread.ordinal()] = bread;
+
+        Item water = new Item();
+        water.setItemType("Water");
+        water.setAvailableQuantity(0);
+        water.setRequiredAmount(0);
+        water.setWeight(4);
+        items[ItemIndex.water.ordinal()] = water;
+
+        return items;
     }
 
     public static void saveGame(Game currentGame, String filePath) {
-                System.out.println("\n***saveExistingGame function called");
+        System.out.println("\n***saveExistingGame function called");
 
 //        throws GameControlException{
 //        
@@ -129,32 +125,19 @@ public class GameControl {
 //        }
     }
 
-    public static void getExistingGame(String filePath) {
-     Game game  = null;  
-    try( FileInputStream fips = new FileInputStream(filePath)){
-        ObjectInputStream input = new ObjectInputStream(fips);
-        
-        game = (Game) input.readObject(); //reads the game object from file
-        
-    }
-    catch(Exception e){
-         try {
-             throw new GameControlException(e.getMessage());
-         } catch (GameControlException ex) {
-             Logger.getLogger(GameControl.class.getName()).log(Level.SEVERE, null, ex);
-         }
-    }
+    public static void getSavedGame(String filePath)
+            throws GameControlException {
+        Game game = null;
+        try (FileInputStream fips = new FileInputStream(filePath)) {
+            ObjectInputStream input = new ObjectInputStream(fips);
+
+            game = (Game) input.readObject(); //reads the game object from file
+        } 
+        catch (Exception e) {
+            throw new GameControlException(e.getMessage());
+        }
     
     //close the output file
     TeamSurvival.setCurrentGame(game); //save in Team survival
-        }
-
-    
-
-    }
-
-    
-  
-       
-    
-
+}
+}
