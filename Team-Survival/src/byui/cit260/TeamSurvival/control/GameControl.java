@@ -10,6 +10,7 @@ import byui.cit260.TeamSurvival.model.Item;
 import byui.cit260.TeamSurvival.model.ItemIndex;
 import byui.cit260.TeamSurvival.model.Map;
 import byui.cit260.TeamSurvival.model.Player;
+import byui.cit260.TeamSurvival.model.Scene;
 import byui.cit260.TeamSurvival.model.Ship;
 import team.survival.TeamSurvival;
 
@@ -31,10 +32,10 @@ public class GameControl {
         
 //        Ship ship = new Ship();
 //        game.setShip(ship);
-//        
+       
        Map map = MapControl.createMap();
        game.setMap(map);
-       
+      
        MapControl.moveCharactersToStartingLocation(map);
     }
     
@@ -105,8 +106,7 @@ public class GameControl {
        
        
        return items;
-    }
-  
-       
-    
+    }   
+
+   
 }
