@@ -59,17 +59,48 @@ public class MainMenuView extends View {
     }
 
     private void startExistingGame() {
-        System.out.println("\n***startExistingGame function called");
-    }
-
+//prompts user for name of file to save the game in
+        this.console.println("\n\n Enter the file path for the file where the gane is to be saved");
+        String filePath = this.getInput();
+        
+        try{
+            //save gane to the specified file.
+            GameControl.getExistingGame(filePath);
+        } catch (Exception ex){
+            ErrorView.display("MainMenuView", ex.getMessage());
+        }
+        //display the game menu
+        GameMenuView gameMenu =new GameMenuView();
+        gameMenu.display();
+        System.out.println("\n***saveGame function called");
+    }    
+    
     private void displayHelpMenu() {
         HelpMenuView helpMenu = new HelpMenuView();
         helpMenu.display();
-
+//
     }
 
     private void saveGame() {
         System.out.println("\n***saveGame function called");
+
+        //prompts user for name of file to save the game in
+        this.console.println("\n\n Enter the file path for the file where the gane is to be saved");
+        String filePath = this.getInput();
+        
+        try{
+            //save gane to the specified file.
+            GameControl.saveGame(TeamSurvival.getCurrentGame(), filePath);
+        } catch (Exception e){
+            ErrorView.display("MainMenuView", e.getMessage());
+        }
     }
 
+    
 }
+
+
+    
+
+
+

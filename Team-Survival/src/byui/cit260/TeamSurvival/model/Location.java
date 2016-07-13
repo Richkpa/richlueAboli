@@ -189,5 +189,10 @@ public class Location implements Serializable{
         return "Location{" + "row=" + row + ", column=" + column + ", locationsVisited=" + locationsVisited + ", locationsRemaining=" + locationsRemaining + ", character=" + character + ", item=" + item + ", obstacle=" + obstacle + ", scene=" + scene + ", resource=" + resource + ", map=" + map + '}';
     }
 
+    public void getScene(Scene scene) {
+//        Scene nextScene = new Scene();
+//        nextScene.display();
+         System.out.println("\n***puroseOfGame stub function called");
+    }
     
 }

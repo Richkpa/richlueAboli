@@ -5,6 +5,7 @@
  */
 package byui.cit260.TeamSurvival.control;
 
+import byui.cit260.TeamSurvival.exceptions.GameControlException;
 import byui.cit260.TeamSurvival.model.Game;
 import byui.cit260.TeamSurvival.model.Item;
 import byui.cit260.TeamSurvival.model.ItemIndex;
@@ -12,6 +13,12 @@ import byui.cit260.TeamSurvival.model.Map;
 import byui.cit260.TeamSurvival.model.Player;
 import byui.cit260.TeamSurvival.model.Scene;
 import byui.cit260.TeamSurvival.model.Ship;
+import java.io.FileInputStream;
+import java.io.FileOutputStream;
+import java.io.ObjectInputStream;
+import java.io.ObjectOutputStream;
+import java.util.logging.Level;
+import java.util.logging.Logger;
 import team.survival.TeamSurvival;
 
 /**
@@ -106,7 +113,49 @@ public class GameControl {
        
        
        return items;
-    }   
+    }
 
-   
-}
+    public static void saveGame(Game currentGame, String filePath) {
+                System.out.println("\n***saveExistingGame function called");
+
+//        throws GameControlException{
+//        
+//        try(FileOutputStream fops = new FileOutputStream(filePath)){
+//            ObjectOutputStream output  = new ObjectOutputStream(fops);
+//            
+//            output.writeObject(currentGame); //wirts the game object out to a file
+//            catch(Exception e){
+//                    throw new GameControlException(e.getMessage());
+//                    }
+//        }
+    }
+
+    public static void getExistingGame(String filePath) {
+     Game game  = null;  
+    try( FileInputStream fips = new FileInputStream(filePath)){
+        ObjectInputStream input = new ObjectInputStream(fips);
+        
+        game = (Game) input.readObject(); //reads the game object from file
+        
+    }
+    catch(Exception e){
+         try {
+             throw new GameControlException(e.getMessage());
+         } catch (GameControlException ex) {
+             Logger.getLogger(GameControl.class.getName()).log(Level.SEVERE, null, ex);
+         }
+    }
+    
+    //close the output file
+    TeamSurvival.setCurrentGame(game); //save in Team survival
+        }
+
+    
+
+    }
+
+    
+  
+       
+    
+

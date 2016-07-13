@@ -109,7 +109,7 @@ public class ResourceListView extends View {
     }
 
     private void calculateDistance() {
-        System.out.println("\n***puroseOfGame stub function called");
+        System.out.println("\n***calculateDistance() stub function called");
     }
 
     private void calculateArea() {

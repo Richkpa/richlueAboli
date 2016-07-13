@@ -5,7 +5,10 @@
  */
 package byui.cit260.TeamSurvival.view;
 
+import java.io.BufferedReader;
+import java.io.PrintWriter;
 import java.util.Scanner;
+import team.survival.TeamSurvival;
 
 /**
  *
@@ -14,6 +17,9 @@ import java.util.Scanner;
 public abstract class View implements ViewInterface {
 
     protected String displayMessage;
+
+        protected final BufferedReader keyboard = TeamSurvival.getInFile();
+        protected final PrintWriter console = TeamSurvival.getOutFile();
 
     public View() {
     }
@@ -26,7 +32,7 @@ public abstract class View implements ViewInterface {
     public void display() {
 
         boolean done = false; //set flag to not done
-        do {
+         do {
             String value = this.getInput();
             if (value.toUpperCase().equals("Q"))//user want to quit
             {
@@ -41,24 +47,29 @@ public abstract class View implements ViewInterface {
 
     @Override
     public String getInput() {
-        Scanner keyboard = new Scanner(System.in); //get infile from the keyboard
+//        Scanner keyboard = new Scanner(System.in); //get infile from the keyboard
         String value = null; //value to be returned is a string
         boolean valid = false; // initialize the valuve of the vaariable to not valid
-
+    try{
         while (!valid) {
 
-            System.out.println("\n" + this.displayMessage);
+            this.console.println("\n" + this.displayMessage);
 
-            value = keyboard.nextLine(); //get nextline typed on keyboard
+            value = this.keyboard.readLine(); //get nextline typed on keyboard
             value = value.trim(); //Trim off the leading and trailing blanks
 
             if (value.length() < 1) {
-                System.out.println("\n*** You must enter a value *** ");
+                ErrorView.display(this.getClass().getName(),
+                        "\n*** You must enter a value *** ");
                 continue;
 
             }
             break;
         }
+    }catch (Exception e){
+                           ErrorView.display(this.getClass().getName(),
+                            "Error reading input: " + e.getMessage());
+    }
         return value;
     }
 
