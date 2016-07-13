@@ -59,13 +59,14 @@ public class GameMenuView extends View {
          Location[][] locations = map.getLocations();
          
          String dash = "-";
-         String divider = new String (new char[150]).replace("\0", dash);
+         String divider = new String (new char[31]).replace("\0", dash);
          
          System.out.println("The Map of Zulu");
-    for (int i = 0; i < locations.length - 1; i++) {
-        System.out.println(divider);
+         System.out.println(divider);
+    for (int i = 0; i < locations.length ; i++) {
+        
           System.out.print(i+1);
-         for (int j = 0; j < locations[i].length - 1; j++) {
+         for (int j = 0; j < locations[i].length ; j++) {
              System.out.print("|");
              Location currentLocation = locations[i][j];
             if (currentLocation.isLocationsVisited()) {
@@ -74,10 +75,9 @@ public class GameMenuView extends View {
             else {
            System.out.print(" ?? ");
             }
-            System.out.println("|");
+            System.out.print("|");
          }
-         System.out.println(divider);
-         System.out.println("-");
+         System.out.println("\n" + divider);
     }
     }
 

@@ -42,6 +42,7 @@ public class Map implements Serializable{
                 location.setColumn(column);
                 location.setRow(row);
                 location.setVisited(false);
+                this.locations[row][column] = location;
             }
         }
     }
@@ -62,7 +63,7 @@ public class Map implements Serializable{
         this.columnCount = columnCount;
     }
 
-    public byui.cit260.TeamSurvival.model.Location[][] getLocations() {
+    public Location[][] getLocations() {
         return locations;
     }
 

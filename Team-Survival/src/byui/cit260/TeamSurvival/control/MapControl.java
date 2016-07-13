@@ -33,7 +33,7 @@ class MapControl {
        Scene[] scenes = createScenes();
         
         //assign the different scenes to location in the map
-        assignScenesToLocation(map, scenes);
+        MapControl.assignScenesToLocation(map, scenes);
         
         return map;
     }
@@ -72,7 +72,10 @@ class MapControl {
     private static void assignScenesToLocation(Map map, Scene[] scenes) {
        Location[][] location = map.getLocations();
        
+//       System.out.println(location[0][0]);
+       
        //start point
+       location[0][0].setVisited(true);
        location[0][0].setScene(scenes[SceneType.start.ordinal()]);
        location[0][1].setScene(scenes[SceneType.foodRoom.ordinal()]);
        location[0][2].setScene(scenes[SceneType.medicineRoom.ordinal()]);
@@ -99,8 +102,7 @@ class MapControl {
        location[4][3].setScene(scenes[SceneType.calculateDistance.ordinal()]);
        location[4][4].setScene(scenes[SceneType.calculateWeight.ordinal()]);
        
-          
-       
+//           System.out.println(scenes[0]);
     }
     
         public static void moveCharactersToStartingLocation(Map map){

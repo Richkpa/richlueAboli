@@ -11,6 +11,7 @@ import byui.cit260.TeamSurvival.model.Item;
 import byui.cit260.TeamSurvival.model.ItemIndex;
 import byui.cit260.TeamSurvival.model.Map;
 import byui.cit260.TeamSurvival.model.Player;
+import byui.cit260.TeamSurvival.model.Scene;
 import byui.cit260.TeamSurvival.model.Ship;
 import java.io.FileInputStream;
 import java.io.FileOutputStream;
