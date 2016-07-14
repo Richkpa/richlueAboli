@@ -109,7 +109,7 @@ class MapControl {
             System.out.println("Some function called here");
         }
 
-
+//
 //    public static void moveCharactersToStartingLocation(Character character, Point coordinates)
 //                    throws MapControlException{
 //Map map = TeamSurvival.getCurrentGame().getMap();
@@ -120,9 +120,9 @@ class MapControl {
 //   throw new MapControlException("Cannot move character to location"
 //                                  + coordinates.x + "," coordinates.y
 //                                 + "because the location is outside the"
-//                                 + " bounds of the map.";
+//                                 + " bounds of the map.");
 //    }
-//return 0;
+//    }
 }
 
     
