@@ -15,6 +15,7 @@ import java.util.Scanner;
 public class CalcAreaView {
 
     private String promptMessage;
+    double radius;
 //constructor function cons fu err
     public CalcAreaView() {
         this.promptMessage
@@ -60,12 +61,17 @@ public class CalcAreaView {
 
     //player provides the radius, calculation is carried out
     private boolean doAction(String valueEntered) {
-        double radius = Double.parseDouble(valueEntered);
+        try{
+            double radius = Double.parseDouble(valueEntered);
+        }catch (NumberFormatException nfe){
+            System.out.println("\n Your input must be a number."
+                                + "Try again or enter Q to quit");
+        }
 
         this.promptMessage = "please enter a number ";
         String value2 = this.getValueEntered();
         double number = Double.parseDouble(value2);
-
+        
         double result = LocationControl.calcArea(radius);
         if (result < 0) {
             System.out.println("\n Invalid input. Please try again");
