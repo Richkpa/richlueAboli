@@ -4,7 +4,7 @@
  * and open the template in the editor.
  */
 package byui.cit260.TeamSurvival.view;
-
+import byui.cit260.TeamSurvival.exceptions.MapControlException;
 import byui.cit260.TeamSurvival.control.GameControl;
 import java.util.Scanner;
 import team.survival.TeamSurvival;
@@ -52,15 +52,19 @@ public class MainMenuView extends View {
 
     private void startNewGame() {
         //create a new game
+        try{
         GameControl.createNewGame(TeamSurvival.getPlayer());
+        } catch (MapControlException mce){
+        System.out.println(mce.getMessage());
         //display the game menu
         GameMenuView gameMenu = new GameMenuView();
         gameMenu.display();
     }
+    }
 
     private void startSavedGame() {
 //prompts user for name of file to save the game in
-        this.console.println("\n\n Enter the file path for the file where the gane is to be saved");
+        this.console.println("\n\n Enter the file path from where the game is to be retrieved");
         String filePath = this.getInput();
         
         try{
@@ -72,7 +76,7 @@ public class MainMenuView extends View {
         //display the game menu
         GameMenuView gameMenu =new GameMenuView();
         gameMenu.display();
-        System.out.println("\n***saveGame function called");
+//        System.out.println("\n***saveGame function called");
     }    
     
     private void displayHelpMenu() {

@@ -6,6 +6,7 @@
 package byui.cit260.TeamSurvival.control;
 
 import byui.cit260.TeamSurvival.exceptions.GameControlException;
+import byui.cit260.TeamSurvival.exceptions.MapControlException;
 import byui.cit260.TeamSurvival.model.Game;
 import byui.cit260.TeamSurvival.model.Item;
 import byui.cit260.TeamSurvival.model.ItemIndex;
@@ -27,7 +28,8 @@ import team.survival.TeamSurvival;
  */
 public class GameControl {
 
-    public static void createNewGame(Player player) {
+    public static void createNewGame(Player player) 
+    throws MapControlException{
 
         Game game = new Game();
         TeamSurvival.setCurrentGame(game);
@@ -41,10 +43,14 @@ public class GameControl {
 //        game.setShip(ship);
 //        
         Map map = MapControl.createMap();
+        
         game.setMap(map);
-
+//        try{
         MapControl.moveCharactersToStartingLocation(map);
+//    } catch (MapControlException mce){
+//        System.out.println(mce.getMessage());
     }
+    
 
     public static Player createPlayer(String name) {
 
@@ -111,20 +117,20 @@ public class GameControl {
         return items;
     }
 
-    public static void saveGame(Game currentGame, String filePath) {
-        System.out.println("\n***saveExistingGame function called");
+    public static void saveGame(Game currentGame, String filePath) 
+//        System.out.println("\n***saveExistingGame function called");
 
-//        throws GameControlException{
-//        
-//        try(FileOutputStream fops = new FileOutputStream(filePath)){
-//            ObjectOutputStream output  = new ObjectOutputStream(fops);
-//            
-//            output.writeObject(currentGame); //wirts the game object out to a file
-//            catch(Exception e){
-//                    throw new GameControlException(e.getMessage());
-//                    }
-//        }
-    }
+        throws GameControlException{
+        
+        try(FileOutputStream fops = new FileOutputStream(filePath)){
+            ObjectOutputStream output  = new ObjectOutputStream(fops);
+            
+            output.writeObject(currentGame); //wirts the game object out to a file
+        } catch(Exception e){
+                    throw new GameControlException(e.getMessage());
+                    }
+        }
+    
 
     public static void getSavedGame(String filePath)
             throws GameControlException {
@@ -134,11 +140,12 @@ public class GameControl {
 
             game = (Game) input.readObject(); //reads the game object from file
         } 
-        catch (Exception e) {
+catch (Exception e) {
             throw new GameControlException(e.getMessage());
         }
     
     //close the output file
     TeamSurvival.setCurrentGame(game); //save in Team survival
 }
+
 }

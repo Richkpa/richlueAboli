@@ -7,6 +7,7 @@ package byui.cit260.TeamSurvival.control;
 
 import byui.cit260.TeamSurvival.model.Location;
 import byui.cit260.TeamSurvival.model.Map;
+import byui.cit260.TeamSurvival.model.Character;
 import byui.cit260.TeamSurvival.model.Scene;
 import byui.cit260.TeamSurvival.model.SceneType;
 import byui.cit260.TeamSurvival.exceptions.MapControlException;
@@ -107,22 +108,19 @@ class MapControl {
 //           System.out.println(scenes[0]);
     }
 
-    public static void moveCharactersToStartingLocation(Map map) {
-//// for evrey actor
-//Character[] characters = Character.description();
-//    
-//    for (Character character : characters){
-//        Point coordinates = character.getCoordinates();
-//        int returnVal = MapControl.moveCharacterToLocation(characters, coordinates);
-//        if (returnVal < 0){
-//            return returnVal;
-//        }
-//        return 0;
-//    }
-    }
+    public static void moveCharactersToStartingLocation(Map map) 
+                                throws MapControlException{
+        Character[] characters = Character.values();
+             // iterate for every character
+        for (Character character : characters) {
+            Point coordinates = character.getCoordinates();
+            MapControl.moveCharactersToLocation(characters, coordinates);
+            }
+            }
+        
     
 
-    public static void moveCharactersToLocation(Character character, Point coordinates)
+    public static void moveCharactersToLocation(Character[] character, Point coordinates)
             throws MapControlException {
         Map map = TeamSurvival.getCurrentGame().getMap();
         int newRow = coordinates.x;
@@ -134,7 +132,9 @@ class MapControl {
                     + "because the location is outside the"
                     + " bounds of the map.");
         }
-        
-    }
 
+    
+    }
 }
+
+
