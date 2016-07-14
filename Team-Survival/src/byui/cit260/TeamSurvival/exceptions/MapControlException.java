@@ -9,7 +9,7 @@ package byui.cit260.TeamSurvival.exceptions;
  *
  * @author prich
  */
-class MapControlException extends Exception {
+public class MapControlException extends Exception {
 
     public MapControlException() {
     }
