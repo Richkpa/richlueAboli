@@ -4,6 +4,7 @@
  * and open the template in the editor.
  */
 package byui.cit260.TeamSurvival.model;
+import java.awt.Point;
 import java.io.Serializable;
 import java.util.Objects;
 /**
@@ -15,6 +16,7 @@ public class Player implements Serializable {
     //class instance variable 
     private String name;
     private int lessMove; 
+    private Point coordinates;
     
     private Character character;
 
@@ -45,6 +47,14 @@ public class Player implements Serializable {
 
     public void setCharacter(Character character) {
         this.character = character;
+    }
+
+    public Point getCoordinates() {
+        return coordinates;
+    }
+
+    public void setCoordinates(Point coordinates) {
+        this.coordinates = coordinates;
     }
 
     

@@ -16,7 +16,7 @@ import team.survival.TeamSurvival;
 public class MainMenuView extends View {
 
     public MainMenuView() {
-        super("\n**********************************"
+        super("\n***************************************"
                 + "\n |  Main Menu                      "
                 + "\n **********************************"
                 + "\n N - Start New Game                "
@@ -54,11 +54,11 @@ public class MainMenuView extends View {
         //create a new game
         try{
         GameControl.createNewGame(TeamSurvival.getPlayer());
+         GameMenuView gameMenu = new GameMenuView();
+        gameMenu.display();
         } catch (MapControlException mce){
         System.out.println(mce.getMessage());
         //display the game menu
-        GameMenuView gameMenu = new GameMenuView();
-        gameMenu.display();
     }
     }
 

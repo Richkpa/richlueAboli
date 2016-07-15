@@ -78,7 +78,6 @@ class MapControl {
 
 //       System.out.println(location[0][0]);
         //start point
-        location[0][0].setVisited(true);
         location[0][0].setScene(scenes[SceneType.start.ordinal()]);
         location[0][1].setScene(scenes[SceneType.foodRoom.ordinal()]);
         location[0][2].setScene(scenes[SceneType.medicineRoom.ordinal()]);
@@ -110,18 +109,21 @@ class MapControl {
 
     public static void moveCharactersToStartingLocation(Map map) 
                                 throws MapControlException{
-        Character[] characters = Character.values();
+        TeamSurvival.getCurrentGame().getPlayer().setCoordinates(new Point(0,0));
+        map.getLocations()[0][0].setVisited(true);
+//        Character[] characters = Character.values();
              // iterate for every character
-        for (Character character : characters) {
-            Point coordinates = character.getCoordinates();
-            MapControl.moveCharactersToLocation(characters, coordinates);
-            }
+//        for (Character character : characters) {
+//            Point coordinates = character.getCoordinates();
+//            MapControl.moveCharactersToLocation(characters, coordinates);
+//            }
             }
         
     
 
     public static void moveCharactersToLocation(Character[] character, Point coordinates)
             throws MapControlException {
+       
         Map map = TeamSurvival.getCurrentGame().getMap();
         int newRow = coordinates.x;
         int newColumn = coordinates.y;
@@ -132,21 +134,10 @@ class MapControl {
                     + "because the location is outside the"
                     + " bounds of the map.");
         }
+         TeamSurvival.getCurrentGame().getPlayer().setCoordinates(coordinates);
+         map.getLocations()[newRow][newColumn].setVisited(true);
+    }
 
-
-//    public static void moveCharactersToStartingLocation(Character character, Point coordinates)
-//                    throws MapControlException{
-//Map map = TeamSurvival.getCurrentGame().getMap();
-//int newRow = coordinates.x;
-//int newColumn = coordinates.y;
-//
-//if(newRow < 0 || newRow >= map.getRowCount()|| newColumn < 0 || newColumn >= map.getColumnCount()){
-//   throw new MapControlException("Cannot move character to location"
-//                                  + coordinates.x + "," coordinates.y
-//                                 + "because the location is outside the"
-//                                 + " bounds of the map.");
-//    }
-  }
 }
 
 

@@ -6,6 +6,7 @@
 package byui.cit260.TeamSurvival.view;
 
 import byui.cit260.TeamSurvival.control.LocationControl;
+import byui.cit260.TeamSurvival.exceptions.LocationControlException;
 import java.util.Scanner;
 
 /**
@@ -67,8 +68,8 @@ public class CalcAreaView {
             System.out.println("\n Your input must be a number."
                                 + "Try again or enter Q to quit");
         }
-
-        this.promptMessage = "please enter a number ";
+        try{
+        this.promptMessage = "please enter a number";
         String value2 = this.getValueEntered();
         double number = Double.parseDouble(value2);
         
@@ -87,7 +88,12 @@ public class CalcAreaView {
             System.out.println("\n the area for the radius you entered is " + finalResult + " traveller");
             return true;
         }
-
+        } catch(LocationControlException lce) {
+            // lce.getMessage()
+            return false;
+        }
+        
+        
     }
-
+    
 }

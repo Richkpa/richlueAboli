@@ -4,6 +4,7 @@
  * and open the template in the editor.
  */
 package byui.cit260.TeamSurvival.control;
+import byui.cit260.TeamSurvival.exceptions.LocationControlException;
 import java.lang.Math;
 
 
@@ -14,10 +15,10 @@ import java.lang.Math;
 public class LocationControl {
 
     
-    public static double calcArea (double radius){
+    public static double calcArea (double radius)throws LocationControlException{
 
         if (radius < 1 || radius > 120){ 
-            return -1;
+            throw new LocationControlException("The radius is out of bound");
         }
         double area = Math.pow(radius, 2) * Math.PI;
         return area; 
