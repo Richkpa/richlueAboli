@@ -9,6 +9,8 @@ import byui.cit260.TeamSurvival.control.GameControl;
 import byui.cit260.TeamSurvival.model.Game;
 import byui.cit260.TeamSurvival.model.Item;
 import byui.cit260.TeamSurvival.model.ItemIndex;
+import java.io.FileNotFoundException;
+import java.io.PrintWriter;
 import java.util.Scanner;
 import team.survival.TeamSurvival;
 
@@ -28,6 +30,7 @@ public class ResourceListView extends View {
                 + "\n I - List of items in inventory storage      "
                 + "\n D - Calculate the distance                  "
                 + "\n S - Sorting the list of Items               "
+                + "\n K - Save the Item list to file              "
                 + "\n A - Calculate the area                      "
                 + "\n Q - Quit                                    "
                 + "\n*********************************************");
@@ -59,6 +62,9 @@ public class ResourceListView extends View {
                 break;
             case "A":
                 this.calculateArea();
+                break;
+            case "K":
+                this.saveListToFile();
                 break;
             default:
                 System.out.println("\nInvalid selection. Try again");
@@ -133,4 +139,40 @@ public class ResourceListView extends View {
     
     }
 
+    private void saveListToFile() {
+       this.console.println("\n\n Enter the file path for the file where the game is to be saved");
+       String filePath = this.getInput();
+       try{
+           Item[] items = TeamSurvival.getCurrentGame().getItem();
+           printItemlistReport(items, filePath);
+           console.printf("The file" + filePath + "was written successfully");
+       }catch (Exception ex) {
+           ErrorView.display("MainMenuView", ex.getMessage());
+       }
+    }
+
+    private void printItemlistReport(Item[] item, String outputLocation) throws FileNotFoundException {
+       
+        try (PrintWriter out = new PrintWriter(outputLocation)) {
+           
+            // print title and cloumn heading
+            out.println("\n\n           Item List                  ");
+            out.printf("%n%-20s%10s%10s", "Description", "Quantity", "In Stock");
+             out.printf("%n%-20s%10s%10s", "----------", "--------", "------");
+             
+             //print the sedcription quanity of each item
+             for (Item items : item) { 
+                out.printf("%n%-20s%7ffgfgh"
+                        + "%13.2f" 
+                                              , items.getItemType()
+                                              , items.getAvailableQuantity()
+                                              , items.getRequiredAmount());
+                 
+             }
+        } catch (Exception ex) {
+            ErrorView.display("MainMenuView", ex.getMessage());
+        }
+    }
 }
+    
+

@@ -6,6 +6,7 @@
 package byui.cit260.TeamSurvival.view;
 
 import byui.cit260.TeamSurvival.control.LocationControl;
+import byui.cit260.TeamSurvival.exceptions.LocationControlException;
 import java.util.Scanner;
 
 /**
@@ -15,15 +16,16 @@ import java.util.Scanner;
 public class ConvertToGramsView extends View {
 
     public ConvertToGramsView() {
-        super("\n You have ....... amount in grams. Convert this number to pounds. Enter the number of gram: ");
+        super("\n  Convert this number to pounds. Enter the number of gram: ");
 
     }
 
 //call the checkvalidedPounds class form the location control
     public boolean doAction(String Opnumber) { //Passing Value
+        try{
         double answer = Double.parseDouble(Opnumber);
         // I want to pass the value "Number" enter from the user
-        double ConvertPounds = 6876.8;
+        double ConvertPounds = 6875.0;
         //this will be the answer geerated form the computer
         // this Is What I Want TO Convert To Pounds - this Is The Answer From The Computer
         boolean valid = LocationControl.checkValidedPounds(ConvertPounds, answer);
@@ -33,8 +35,11 @@ public class ConvertToGramsView extends View {
         } else {
             return valid;
         }
+    }catch(LocationControlException len) {
+             ErrorView.display("Attention!!:", len.getMessage());
+            return false;
     }
-
+    }
 }
 
 

@@ -10,8 +10,8 @@ package byui.cit260.TeamSurvival.model;
  * @author prich
  */
 public enum ItemIndex {
-        bread,
-        rice,
+    rice,
+    bread,    
     water;
     
     }

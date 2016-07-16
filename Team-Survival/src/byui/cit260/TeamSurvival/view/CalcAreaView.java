@@ -89,7 +89,7 @@ public class CalcAreaView {
             return true;
         }
         } catch(LocationControlException lce) {
-            // lce.getMessage()
+             ErrorView.display("Attention!!:", lce.getMessage());
             return false;
         }
         

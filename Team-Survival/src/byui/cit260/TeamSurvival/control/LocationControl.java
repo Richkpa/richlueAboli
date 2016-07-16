@@ -18,7 +18,7 @@ public class LocationControl {
     public static double calcArea (double radius)throws LocationControlException{
 
         if (radius < 1 || radius > 120){ 
-            throw new LocationControlException("The radius is out of bound");
+            throw new LocationControlException("The raduis is out of bound");
         }
         double area = Math.pow(radius, 2) * Math.PI;
         return area; 
@@ -69,11 +69,11 @@ public class LocationControl {
 
 
     ////Convert Pounds to Grams Calculation
-    public static double convertLbsToGram (double pounds){  //Birth
+    public static double convertLbsToGram (double pounds) throws LocationControlException {  //Birth
     
     if (pounds < 46 || pounds > 125) { //Birth 
-    return -1;   //Death
-    
+     //Death
+     throw new LocationControlException("The Pound is out of Range");
     }
     
  //formula for converting from pounds to grams
@@ -83,7 +83,7 @@ public class LocationControl {
     
     } //death
     
-    public static boolean checkValidedPounds (double convertPounds, double answer){ //Birth 
+    public static boolean checkValidedPounds (double convertPounds, double answer)throws LocationControlException{ //Birth 
         //convert poubds into grams
        double grams = (int) LocationControl.convertLbsToGram(convertPounds);
         //check to see if the number of grams equal the answer than 
