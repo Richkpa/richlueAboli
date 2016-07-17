@@ -5,11 +5,16 @@
  */
 package byui.cit260.TeamSurvival.view;
 
+import byui.cit260.TeamSurvival.control.MapControl;
 import byui.cit260.TeamSurvival.model.Game;
 import byui.cit260.TeamSurvival.model.Location;
 import byui.cit260.TeamSurvival.model.Map;
+import java.awt.Point;
+import static java.lang.Integer.parseInt;
 import java.util.Scanner;
 import team.survival.TeamSurvival;
+import byui.cit260.TeamSurvival.model.Character;
+import byui.cit260.TeamSurvival.exceptions.MapControlException;
 
 /**
  *
@@ -22,6 +27,7 @@ public class GameMenuView extends View {
                 + "\n |  Game Menu                      "
                 + "\n **********************************"
                 + "\n V - View Map                      "
+                + "\n M - Move Player                   "
                 + "\n R - View remaining number of moves"
                 + "\n L - View for resources in a place."
                 + "\n S - Save game                     "
@@ -42,6 +48,9 @@ public class GameMenuView extends View {
                 break;
             case "L":
                 this.resourceList();
+                break;
+             case "M":
+                this.movePlayer();
                 break;
             default:
                 System.out.println("\nInvalid selection. Try again");
@@ -90,6 +99,37 @@ public class GameMenuView extends View {
         resourceList.display();
     }
 
-    
+    private void movePlayer() {
+         System.out.println("\n Input the direction that you want to move in."
+                 + "\n U - for moving UP"
+                 + "\n D - for moving Down"
+                 + "\n R - for moving Right"
+                 + "\n L - for moving Left");
+        String direction = this.getInput();
+         System.out.println("\ne How many spaces do you want to move?");
+         int spaces = parseInt(this.getInput());
+       Point currentLocation =  TeamSurvival.getCurrentGame().getPlayer().getCharacter().getCoordinates();
+      try{
+       switch (direction) {
+        case "U": 
+       MapControl.moveCharactersToLocation(Character.values(), new Point (currentLocation.x, currentLocation.y - spaces ));
+        break;
+        case "D": 
+       MapControl.moveCharactersToLocation(Character.values(), new Point (currentLocation.x, currentLocation.y + spaces ));
+        break;
+        case "R": 
+       MapControl.moveCharactersToLocation(Character.values(), new Point (currentLocation.x + spaces, currentLocation.y));
+        break;
+        case "L": 
+       MapControl.moveCharactersToLocation(Character.values(), new Point (currentLocation.x - spaces, currentLocation.y));
+        break;
+         default:
+                System.out.println("\nInvalid selection. Try again");
+    }
+    }catch(Exception mc) {
+         ErrorView.display("MainMenuView", mc.getMessage());
+    }
+
+    }
 
 }

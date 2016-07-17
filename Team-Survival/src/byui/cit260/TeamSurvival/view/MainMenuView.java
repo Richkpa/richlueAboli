@@ -91,7 +91,7 @@ public class MainMenuView extends View {
         //prompts user for name of file to save the game in
         this.console.println("\n\n Enter the file path for the file where the gane is to be saved");
         String filePath = this.getInput();
-        
+         console.printf("The file" + filePath + "was written successfully");
         try{
             //save gane to the specified file.
             GameControl.saveGame(TeamSurvival.getCurrentGame(), filePath);

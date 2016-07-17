@@ -19,7 +19,7 @@ import team.survival.TeamSurvival;
  *
  * @author prich
  */
-class MapControl {
+public class MapControl {
 
     public static Map create() {
         //create the map
@@ -109,14 +109,14 @@ class MapControl {
 
     public static void moveCharactersToStartingLocation(Map map) 
                                 throws MapControlException{
-        TeamSurvival.getCurrentGame().getPlayer().setCoordinates(new Point(0,0));
+//        TeamSurvival.getCurrentGame().getPlayer().getCharacter().getCoordinates().setLocation(0, 0);
         map.getLocations()[0][0].setVisited(true);
-//        Character[] characters = Character.values();
-             // iterate for every character
-//        for (Character character : characters) {
-//            Point coordinates = character.getCoordinates();
-//            MapControl.moveCharactersToLocation(characters, coordinates);
-//            }
+        Character[] characters = Character.values();
+//              iterate for every character
+        for (Character character : characters) {
+            Point coordinates = character.getCoordinates();
+            MapControl.moveCharactersToLocation(characters, coordinates);
+            }
             }
         
     
@@ -125,8 +125,8 @@ class MapControl {
             throws MapControlException {
        
         Map map = TeamSurvival.getCurrentGame().getMap();
-        int newRow = coordinates.x + 1;
-        int newColumn = coordinates.y + 1;
+        int newRow = coordinates.x;
+        int newColumn = coordinates.y;
 
         if (newRow < 0 || newRow >= map.getRowCount() || newColumn < 0 || newColumn >= map.getColumnCount()) {
             throw new MapControlException("Cannot move character to location"
