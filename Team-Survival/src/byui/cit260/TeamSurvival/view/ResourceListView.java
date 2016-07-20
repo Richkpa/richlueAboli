@@ -151,7 +151,7 @@ public class ResourceListView extends View {
        }
     }
 
-    private void printItemlistReport(Item[] item, String outputLocation) throws FileNotFoundException {
+    private void printItemlistReport(Item[] item, String outputLocation){
        
         try (PrintWriter out = new PrintWriter(outputLocation)) {
            

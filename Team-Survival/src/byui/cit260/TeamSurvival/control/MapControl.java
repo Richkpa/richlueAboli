@@ -31,7 +31,7 @@ public class MapControl {
 
     public static Map createMap() {
         //create the map
-        Map map = new Map(5, 5);
+        Map map = new Map(6, 9);
 
         //create the list of different sences in the game
         Scene[] scenes = createScenes();
@@ -103,6 +103,11 @@ public class MapControl {
         location[4][2].setScene(scenes[SceneType.medicineRoom.ordinal()]);
         location[4][3].setScene(scenes[SceneType.calculateDistance.ordinal()]);
         location[4][4].setScene(scenes[SceneType.calculateWeight.ordinal()]);
+        location[5][0].setScene(scenes[SceneType.start.ordinal()]);
+        location[5][1].setScene(scenes[SceneType.foodRoom.ordinal()]);
+        location[5][2].setScene(scenes[SceneType.medicineRoom.ordinal()]);
+        location[5][3].setScene(scenes[SceneType.calculateDistance.ordinal()]);
+        location[5][4].setScene(scenes[SceneType.calculateWeight.ordinal()]);
 
 //           System.out.println(scenes[0]);
     }

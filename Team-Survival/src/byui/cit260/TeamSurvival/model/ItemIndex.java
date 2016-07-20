@@ -12,7 +12,24 @@ package byui.cit260.TeamSurvival.model;
 public enum ItemIndex {
     rice,
     bread,    
-    water;
+    water,
+    avacado,
+    apples,
+    bakedBeans,
+    buritto,
+    cereal,
+    hotDogs,
+    Noodles,
+    Walnuts,
+    Oatmeal,
+    Amitiza ,
+    PainKiller,
+    Amitriptyline ,
+    Bepridil,
+    Beractant,
+    Garlic,
+    Cheese,
+    Butter;
     
     }
       

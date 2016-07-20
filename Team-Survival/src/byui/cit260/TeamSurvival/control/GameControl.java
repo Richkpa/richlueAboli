@@ -91,7 +91,7 @@ public class GameControl {
 
     public static Item[] createItemList() {
         //create array(list) of items lists
-        Item[] items = new Item[3];
+        Item[] items = new Item[20];
 
         Item rice = new Item();
         rice.setItemType("Rice");
@@ -113,6 +113,129 @@ public class GameControl {
         water.setRequiredAmount(0);
         water.setWeight(4);
         items[ItemIndex.water.ordinal()] = water;
+        
+        Item apples = new Item();
+        apples.setItemType("Apples");
+        apples.setAvailableQuantity(8);
+        apples.setRequiredAmount(0);
+        apples.setWeight(2.5);
+        items[ItemIndex.apples.ordinal()] = apples;
+        
+        Item bakedBeans = new Item();
+        bakedBeans.setItemType("Baked Beans");
+        bakedBeans.setAvailableQuantity(5);
+        bakedBeans.setRequiredAmount(0);
+        bakedBeans.setWeight(6);
+        items[ItemIndex.bakedBeans.ordinal()] = bakedBeans;
+        
+        Item avacado = new Item();
+        avacado.setItemType("Avacado");
+        avacado.setAvailableQuantity(3);
+        avacado.setRequiredAmount(0);
+        avacado.setWeight(1.5);
+        items[ItemIndex.avacado.ordinal()] = avacado;
+        
+        Item buritto = new Item();
+        buritto.setItemType("Buritto");
+        buritto.setAvailableQuantity(9);
+        buritto.setRequiredAmount(0);
+        buritto.setWeight(6.5);
+        items[ItemIndex.buritto.ordinal()] = buritto;
+        
+        Item cereal = new Item();
+        cereal.setItemType("Cereal");
+        cereal.setAvailableQuantity(2);
+        cereal.setRequiredAmount(0);
+        cereal.setWeight(3.5);
+        items[ItemIndex.cereal.ordinal()] = cereal;
+        
+        Item hotDogs = new Item();
+        hotDogs.setItemType("Hot Dogs");
+        hotDogs.setAvailableQuantity(10);
+        hotDogs.setRequiredAmount(0);
+        hotDogs.setWeight(7.2);
+        items[ItemIndex.hotDogs.ordinal()] = hotDogs;
+        
+        Item Noodles = new Item();
+        Noodles.setItemType("Noodles");
+        Noodles.setAvailableQuantity(5);
+        Noodles.setRequiredAmount(0);
+        Noodles.setWeight(2.7);
+        items[ItemIndex.Noodles.ordinal()] = Noodles;
+        
+        Item Walnuts = new Item();
+        Walnuts.setItemType("Walnuts");
+        Walnuts.setAvailableQuantity(1);
+        Walnuts.setRequiredAmount(0);
+        Walnuts.setWeight(4.5);
+        items[ItemIndex.Walnuts.ordinal()] = Walnuts;
+        
+         Item Oatmeal = new Item();
+        Oatmeal.setItemType("Oatmeal");
+        Oatmeal.setAvailableQuantity(1);
+        Oatmeal.setRequiredAmount(0);
+        Oatmeal.setWeight(5.5);
+        items[ItemIndex.Oatmeal.ordinal()] = Oatmeal;
+        
+         Item Amitiza = new Item();
+        Amitiza.setItemType("Amitiza");
+        Amitiza.setAvailableQuantity(2);
+        Amitiza.setRequiredAmount(0);
+        Amitiza.setWeight(4);
+        items[ItemIndex.Amitiza.ordinal()] = Amitiza;
+        
+         Item PainKiller = new Item();
+        PainKiller.setItemType("PainKiller");
+        PainKiller.setAvailableQuantity(3);
+        PainKiller.setRequiredAmount(0);
+        PainKiller.setWeight(4.7);
+        items[ItemIndex.PainKiller.ordinal()] = PainKiller;
+        
+         Item Amitriptyline = new Item();
+        Amitriptyline.setItemType("Amitriptyline");
+        Amitriptyline.setAvailableQuantity(2);
+        Amitriptyline.setRequiredAmount(0);
+        Amitriptyline.setWeight(4.2);
+        items[ItemIndex.Amitriptyline.ordinal()] = Amitriptyline;
+        
+         Item Bepridil = new Item();
+        Bepridil.setItemType("Bepridil");
+        Bepridil.setAvailableQuantity(5);
+        Bepridil.setRequiredAmount(0);
+        Bepridil.setWeight(1.9);
+        items[ItemIndex.Bepridil.ordinal()] = Bepridil;
+        
+        
+         Item Beractant = new Item();
+        Beractant.setItemType("Beractant");
+        Beractant.setAvailableQuantity(9);
+        Beractant.setRequiredAmount(0);
+        Beractant.setWeight(1.9);
+        items[ItemIndex.Beractant.ordinal()] = Beractant;
+        
+        
+         Item Garlic = new Item();
+        Garlic.setItemType("Garlic");
+        Garlic.setAvailableQuantity(0);
+        Garlic.setRequiredAmount(0);
+        Garlic.setWeight(4.9);
+        items[ItemIndex.Garlic.ordinal()] = Garlic;
+        
+        Item Cheese = new Item();
+        Cheese.setItemType("Cheese");
+        Cheese.setAvailableQuantity(2);
+        Cheese.setRequiredAmount(0);
+        Cheese.setWeight(5.1);
+        items[ItemIndex.Cheese.ordinal()] = Cheese;
+        
+        Item Butter = new Item();
+        Butter.setItemType("Butter");
+        Butter.setAvailableQuantity(5);
+        Butter.setRequiredAmount(0);
+        Butter.setWeight(6.8);
+        items[ItemIndex.Butter.ordinal()] = Butter;
+        
+        
 
         return items;
     }
