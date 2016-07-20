@@ -68,7 +68,7 @@ public class GameMenuView extends View {
          Location[][] locations = map.getLocations();
          
          String dash = "-";
-         String divider = new String (new char[31]).replace("\0", dash);
+         String divider = new String (new char[55]).replace("\0", dash);
          
          System.out.println("The Map of Zulu");
          System.out.println(divider);
@@ -106,7 +106,7 @@ public class GameMenuView extends View {
                  + "\n R - for moving Right"
                  + "\n L - for moving Left");
         String direction = this.getInput();
-         System.out.println("\ne How many spaces do you want to move?");
+         System.out.println("\n  How many spaces do you want to move?");
          int spaces = parseInt(this.getInput());
        Point currentLocation =  TeamSurvival.getCurrentGame().getPlayer().getCharacter().getCoordinates();
       try{
